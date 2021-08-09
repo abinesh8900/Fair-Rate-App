@@ -1,0 +1,1 @@
+const arrayof=[1,2,3,4,5,6];for(const o of arrayof)console.log(o);
