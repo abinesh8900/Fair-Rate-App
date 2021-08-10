@@ -4,10 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="dist/css/style.css" />
     <title>Fair Rate App</title>
   </head>
   <body>
-    <script src="dist/js/script.js"></script>
+    <header class="main-header">
+      <span class="menu-btn inline-block">
+        <span class="menu-btn__bar-small inline-block"></span>
+        <span class="menu-btn__bar inline-block"></span>
+        <span class="menu-btn__bar-small inline-block"></span>
+        <span class="menu-btn__bar inline-block"></span>
+      </span>
+      <a class="inline-block main-header__logo" href="javascript:void(0)"
+        ><svg width="186" height="39">
+          <use xlink:href="dist/images/sprite-icon.svg#logo"></use>
+        </svg>
+      </a>
+      <div class="main-header__right float-r">
+        <ul class="nav-holder">
+          <li class="nav-item"><a href="javascript:void(0)">Home</a></li>
+          <li class="nav-item"><a href="javascript:void(0)">Application</a></li>
+          <li class="nav-item"><a href="javascript:void(0)">Documents</a></li>
+        </ul>
+        <ul class="main-header__user">
+          <li class="user__notify">
+            <a class="far fa-bell" href="javascript:void(0)"></a>
+          </li>
+          <li class="user__dropdown">
+            <figure class="inline-block user__picture">
+              <img src="dist/images/oval.webp" alt="user" />
+            </figure>
+            <span class="user__name inline-block">
+              Adrian Manea
+              <span class="user__dropdown-arrow fas fa-sort-down"></span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </header>
   </body>
 </html>

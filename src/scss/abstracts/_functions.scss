@@ -1,0 +1,7 @@
+@function clr($clr-value) {
+  @return map-get($color, $clr-value);
+}
+
+@function fs($fs-value) {
+  @return map-get($font-size, $fs-value);
+}

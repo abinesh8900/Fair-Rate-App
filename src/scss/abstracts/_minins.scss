@@ -1,0 +1,7 @@
+@mixin flex-container($align-item: false) {
+  display: flex;
+
+  @if $align-item != false {
+    align-items: $align-item;
+  }
+}
