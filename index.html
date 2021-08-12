@@ -63,7 +63,7 @@
     <main class="page-main">
       <form method="GET" class="input__holder">
         <!-- page-1 -->
-        <div class="username-field mx-auto text-center " id="username-field">
+        <div class="username-field mx-auto text-center hidden" id="username-field">
           <h2 class="username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
           <div class="username__intup-area">
 
@@ -76,14 +76,14 @@
             </div>
 
           </div>
-          <span class="username-field__btn primary-btn inline-block " id="pg-one-next">NEXT</span>
+          <span class="primary-btn inline-block disable" id="pg-one-next">NEXT</span>
         </div>
 
         <!-- page-2 -->
-        <div class="user-info-field mx-auto hidden" id="user-info-field" >
+        <div class="user-info-field mx-auto " id="user-info-field" >
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
-            <h2 class="user-info__heading">Fill the form on the right</h2>
+            <h2 class="user-info__heading">Fill the form <span>on the right</span></h2>
             <p class="user-info__desc">
               Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
             </p>
@@ -106,25 +106,29 @@
 
             <div class="input-field__checkbox ml-auto">
               <input type="checkbox" name="condo" id="condo">
-              <span class="inline-block">Condo</span>
+              <label for="condo" class="checkmark"></label>
+              <label for="condo" class="inline-block input-field__checkbox--text">Condo</label>
             </div>
             <div class="input-field__checkbox ml-auto">
               <input type="checkbox" name="co-op" id="co-op">
-              <span class="inline-block">Co-op</span>
+              <label for="co-op" class="checkmark"></label>
+              <label for="co-op" class="inline-block input-field__checkbox--text">Co-op</label>
             </div>
             <div class="input-field__checkbox ml-auto">
               <input type="checkbox" name="house" id="house">
-              <span class="inline-block">House</span>
+              <label for="house" class="checkmark"></label>
+              <label for="house" class="inline-block input-field__checkbox--text">House</label>
             </div>
 
-            <div class="input-field__dropdown ml-auto">
-              <ul class="input__dropdown">
-                <li class="input__dropdown--item">This month</li>
-                <li class="input__dropdown--item">Next Month</li>
-                <li class="input__dropdown--item">December 2018</li>
-                <li class="input__dropdown--item">january 2019</li>
-                <li class="input__dropdown--item">I don't know</li>
-              </ul>
+            <div class="input-field__select ml-auto">
+              <select class="input__select">
+               <option value="This month">This month</option>
+               <option value="Next Month">Next Month</option>
+               <option value="December 2018">December 2018</option>
+               <option value="january 2019">january 2019</option>
+               <option value="I don't know">I don't know</option>
+              </select>
+              <span class="inline-block"></span>
             </div>
 
             <div class="picture-checkbox__holder">
@@ -139,7 +143,8 @@
               </span>
               <div class="input-field__pic-checkbox">
                 <input type="checkbox" name="criminal-alarm" id="criminal-alarm">
-                <span>Burglar Alarm</span>
+                <label for="criminal-alarm" class="checkmark"></label>
+                <label for="criminal-alarm" class="inline-block input-field__pic-checkbox--text">Burglar Alarm</label>
               </div>
               </div>
               <div class="picture-checkbox__right">
@@ -148,10 +153,11 @@
                   <path fill="currentColor" d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path>
                 </svg>
                 </span>
-                <label  for="fire-alarm" class="input-field__pic-checkbox">
+                <div class="input-field__pic-checkbox">
                   <input type="checkbox" name="fire-alarm" id="fire-alarm">
-                  <span>Burglar Alarm</span>
-                </label>
+                  <label for="fire-alarm" class="checkmark"></label>
+                  <label for="fire-alarm" class="inline-block input-field__pic-checkbox--text">Burglar Alarm</label>
+                </div>
               </div>
             </div>
 

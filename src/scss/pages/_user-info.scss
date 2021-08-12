@@ -13,6 +13,7 @@
 .user-info-field__right {
   width: 430px;
 }
+
 .input-field__dob,
 .input-field__address,
 .input-field__email {
@@ -37,39 +38,102 @@
   color: var(--clr-d-grey-quaternary);
 }
 .input-field__checkbox {
-  @include input-field-checkbox();
+  width: 380px;
+  height: 46px;
+  border: 1px solid var(--clr-lb-grey-primary);
+  background-color: var(--clr-white-primary);
+  border-radius: 3px;
   margin-bottom: 10px;
+
+  & > input {
+    margin: 0;
+    visibility: hidden;
+  }
+  &--text {
+    margin-left: 10px;
+  }
 }
-.input-field__dropdown {
+#condo:checked + .checkmark::after,
+#co-op:checked + .checkmark::after,
+#house:checked + .checkmark::after {
+  @extend .checkmark__animation;
+}
+#condo:checked + .checkmark,
+#co-op:checked + .checkmark,
+#house:checked + .checkmark {
+  @extend .checkmark__border;
+}
+.input-field__select {
   margin-top: 30px;
   margin-bottom: 30px;
   @include input-field(380px);
-  position: relative;
-}
-.input__dropdown {
-  background-color: var(--clr-white-primary);
-  padding: 18px 0;
-  width: 272px;
-  height: 180px;
-  position: absolute;
-  top: 48px;
-  right: 0;
-  overflow: auto;
-  display: none;
+  @include position(relative);
 
-  &--item {
-    font-size: 14px;
-    line-height: 1.43;
-    color: var(--clr-d-grey-primary);
-    padding: 10px 16px;
-    transition: background-color 300ms;
+  & > span {
+    width: 50px;
+    background-color: var(--clr-white-primary);
+    @include position(absolute, $top: 0, $right: 0, $bottom: 0);
+    pointer-events: none;
 
-    &:hover {
-      background-color: var(--clr-l-grey-secondary);
-      cursor: pointer;
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      border: 4px solid transparent;
+      @include position(absolute);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &::before {
+      border-bottom-color: var(--clr-grey-secondary);
+      top: 28%;
+    }
+    &::after {
+      border-top-color: var(--clr-grey-secondary);
+      top: 62%;
     }
   }
 }
+.input__select {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  left: 1.43;
+  color: var(--clr-d-grey-primary);
+  appearance: none;
+
+  & > option {
+    width: 270px;
+  }
+}
+// .input__dropdown {
+//   background-color: var(--clr-white-primary);
+//   padding: 18px 0;
+//   width: 272px;
+//   height: 180px;
+//   position: absolute;
+//   top: 48px;
+//   right: 0;
+//   overflow: auto;
+//   z-index: 10;
+//   box-shadow: 2px 12px 22px -6px var(--clr-d-grey-quaternary);
+//   border-radius: 3px;
+//   // display: none;
+
+//   &--item {
+//     font-size: 14px;
+//     line-height: 1.43;
+//     color: var(--clr-d-grey-primary);
+//     padding: 10px 16px;
+//     transition: background-color 300ms;
+
+//     &:hover {
+//       background-color: var(--clr-l-grey-secondary);
+//       cursor: pointer;
+//     }
+//   }
+// }
+
 .picture-checkbox__holder {
   margin-bottom: 60px;
 }
@@ -82,6 +146,7 @@
   width: 200px;
   height: 166px;
   border: 1px solid var(--clr-lb-grey-primary);
+  border-radius: 3px;
   @include position(relative);
 
   & > span {
@@ -89,13 +154,47 @@
     transform: translateX(-50%);
   }
 }
+.picture-checkbox__left {
+  // &:focus-within {
+  //   border: 1px solid var(--clr-blue-secondary);
+  //   & g[fill] {
+  //     fill: var(--clr-blue-secondary);
+  //   }
+  // }
+  & g[fill] {
+    fill: var(--clr-d-grey-primary);
+  }
+}
+.picture-checkbox__right {
+  // &:focus-within {
+  //   border: 1px solid var(--clr-blue-secondary);
+  //   & path[fill] {
+  //     fill: var(--clr-blue-secondary);
+  //   }
+  // }
+  & path[fill] {
+    fill: var(--clr-d-grey-primary);
+  }
+}
 .input-field__pic-checkbox {
   @include position(absolute, $bottom: 16px);
-  padding-inline: 25px;
+  padding-inline: 20px;
 
   & > input {
-    width: 30px;
-    height: 30px;
-    vertical-align: middle;
+    margin: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
   }
+  &--text {
+    margin-left: 10px;
+  }
+}
+#criminal-alarm:checked + .checkmark::after,
+#fire-alarm:checked + .checkmark::after {
+  @extend .checkmark__animation;
+}
+#criminal-alarm:checked + .checkmark,
+#fire-alarm:checked + .checkmark {
+  @extend .checkmark__border;
 }

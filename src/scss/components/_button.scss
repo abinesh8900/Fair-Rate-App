@@ -13,3 +13,7 @@
 .secondary-btn {
   background-color: var(--clr-lb-grey-primary);
 }
+.primary-btn.disable {
+  cursor: auto;
+  opacity: 0.5;
+}

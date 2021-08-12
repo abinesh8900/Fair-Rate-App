@@ -133,12 +133,14 @@ table {
 }
 input,
 textarea,
-button {
+button,
+select {
   border: 0;
   font-family: OpenSans;
 }
 input,
-textarea {
+textarea,
+select {
   outline: 0;
 }
 button {

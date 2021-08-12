@@ -9,6 +9,7 @@ const showFooter = function () {
   footer.classList.remove("hidden");
 };
 // page one next
+
 pageOneNext.addEventListener("click", () => {
   userNameField.classList.add("hidden");
   userInfoField.classList.remove("hidden");
