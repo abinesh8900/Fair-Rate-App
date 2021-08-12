@@ -4,6 +4,7 @@ const sass = require("gulp-sass")(require("node-sass"));
 const minify = require("gulp-clean-css");
 const terser = require("gulp-terser");
 const imagewebp = require("gulp-webp");
+const imagemin = require("gulp-imagemin");
 const browserSync = require("browser-sync").create();
 
 //crearte functions
@@ -19,6 +20,18 @@ function compilescss() {
 // creat watchtask
 function jsmin() {
   return src("src/js/*.js").pipe(terser()).pipe(dest("dist/js"));
+}
+
+//images
+function optimizeimg() {
+  return src("src/images/*.{jpg,png}")
+    .pipe(
+      imagemin([
+        imagemin.mozjpeg({ quality: 80, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 2 }),
+      ])
+    )
+    .pipe(dest("dist/images"));
 }
 
 //webp images
@@ -48,6 +61,7 @@ function watchTask() {
   watch("*.html", browserSyncRelode);
   watch("src/scss/**/*.scss", series(compilescss, browserSyncRelode));
   watch("src/js/**/*.js", series(jsmin, browserSyncRelode));
+  watch("src/images/*.{jpg,png}", browserSyncRelode);
   watch("dist/images/*.{jpg,png}", webpImage);
 }
 // default gulp
@@ -55,6 +69,7 @@ function watchTask() {
 exports.default = series(
   compilescss,
   jsmin,
+  optimizeimg,
   webpImage,
   browserSyncServer,
   watchTask

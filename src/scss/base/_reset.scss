@@ -131,3 +131,16 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+input,
+textarea,
+button {
+  border: 0;
+  font-family: OpenSans;
+}
+input,
+textarea {
+  outline: 0;
+}
+button {
+  padding: 0;
+}

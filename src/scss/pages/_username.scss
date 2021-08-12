@@ -1,0 +1,26 @@
+.page-main {
+  background-color: var(--clr-white-quaternary);
+}
+.input__holder {
+  padding-top: 145px;
+}
+
+.username-field {
+  height: 65vh;
+  max-width: 537px;
+}
+.hidden.username-field {
+  display: none;
+}
+.username-field__heading {
+  @include input-area-heading(50px);
+}
+.username__intup-area {
+  padding: 0 20px;
+  margin-bottom: 20px;
+  @include flex-container($justify-content: space-between);
+}
+.input-field__first-name,
+.input-field__last-name {
+  @include input-field(238px);
+}

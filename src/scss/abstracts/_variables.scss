@@ -1,13 +1,36 @@
-$color: (
-  primary-grey: #919eab,
-  secondary-grey: #637381,
-  primary-dark-grey: #212b36,
-  primary-white: #ffffff,
-  tertiary-white: #dfe3e8,
+$colors: (
+  l-grey: (
+    primary: #adadad,
+    tertiary: #8f9ea6,
+    secondary: #dfe3e84d,
+  ),
+  grey: (
+    primary: #919eab,
+    secondary: #637381,
+    tertiary: #919eab,
+  ),
+  d-grey: (
+    primary: #212b36,
+    secondary: #454f5b,
+    tertiary: #6a7c92,
+    quaternary: #47495a,
+  ),
+  // light-bule-grey
+  lb-grey:
+    (
+      primary: #c4cdd5,
+    ),
+  white: (
+    primary: #ffffff,
+    secondary: #f3f5f7,
+    tertiary: #dee3e7,
+    quaternary: #f9fafb,
+  ),
+  blue: (
+    primary: #23c0f5,
+    secondary: #4ad5f6,
+  ),
 );
-
-$font-size: (
-  fs-13: 13px,
-  fs-15: 15px,
-  fs-24: 24px,
-);
+.cc {
+  color: #dfe3e84d;
+}

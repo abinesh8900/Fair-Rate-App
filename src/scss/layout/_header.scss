@@ -1,7 +1,7 @@
 .main-header {
   padding: 12px 30px 13px;
-  background-color: clr(primary-white);
-  border: 1px solid clr(tertiary-white);
+  background-color: var(--clr-white-primary);
+  border: 1px solid var(--clr-white-tertiary);
   position: fixed;
   width: 100%;
 }
@@ -12,11 +12,27 @@
   position: absolute;
   margin-right: 37px;
   top: calc(50% - 10px);
+
+  & > :nth-child(1) {
+    top: -1px;
+  }
+  & > :nth-child(2) {
+    top: 7px;
+  }
+  & > :nth-child(3) {
+    top: 15px;
+  }
+  & > :nth-child(4) {
+    bottom: -1px;
+  }
+  &:hover &__bar-small {
+    left: 8px;
+  }
 }
 .menu-btn__bar,
 .menu-btn__bar-small {
   height: 2px;
-  background-color: clr(primary-grey);
+  background-color: var(--clr-grey-primary);
   position: absolute;
   left: 0;
   transition: left 300ms;
@@ -29,64 +45,50 @@
 .menu-btn__bar {
   width: 24px;
 }
-.menu-btn > :nth-child(1) {
-  top: -1px;
-}
-.menu-btn > :nth-child(2) {
-  top: 7px;
-}
-.menu-btn > :nth-child(3) {
-  top: 15px;
-}
-.menu-btn > :nth-child(4) {
-  bottom: -1px;
-}
-.menu-btn:hover .menu-btn__bar-small {
-  left: 8px;
-}
+
 .main-header__logo {
   margin-left: 60px;
 }
 .main-header__right {
   @include flex-container();
 }
-.nav-holder {
+.nav-holder,
+.main-header__user,
+.user__dropdown {
   @include flex-container($align-item: center);
+}
+.nav-holder {
   margin-right: 30px;
 }
 .nav-item {
   margin-right: 42px;
-  font-size: fs(fs-15);
+  font-size: 15px;
 
   & > a {
-    color: clr(primary-grey);
+    color: var(--clr-grey-primary);
   }
   & > a:hover {
-    color: clr(primary-dark-grey);
+    color: var(--clr-d-grey-primary);
   }
 }
-.main-header__user {
-  @include flex-container($align-item: center);
-}
+
 .user__notify {
   margin-right: 23px;
   & > a {
-    color: clr(primary-grey);
-    font-size: fs(fs-24);
+    color: var(--clr-grey-primary);
+    font-size: 24px;
   }
 }
-.user__dropdown {
-  @include flex-container($align-item: center);
-}
+
 .user__picture {
   margin-right: 12px;
 }
 .user__name {
-  color: clr(primary-dark-grey);
-  font-size: fs(fs-13);
+  color: var(--clr-d-grey-primary);
+  font-size: 13px;
 }
 .user__dropdown-arrow {
   margin-left: 12px;
-  color: clr(secondary-grey);
-  font-size: fs(fs-16);
+  color: var(--clr-secondary-gret);
+  font-size: 16px;
 }

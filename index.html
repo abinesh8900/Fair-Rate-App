@@ -21,10 +21,22 @@
         <span class="menu-btn__bar-small inline-block"></span>
         <span class="menu-btn__bar inline-block"></span>
       </span>
-      <a class="inline-block main-header__logo" href="javascript:void(0)"
-        ><svg width="186" height="39">
-          <use xlink:href="dist/images/sprite-icon.svg#logo"></use>
-        </svg>
+      <a class="inline-block main-header__logo" href="javascript:void(0)">
+        <picture class="inline-block">
+          <source
+            srcset="
+              dist/images/logo.png    1x,
+              dist/images/logo@2x.png 2x,
+              dist/images/logo@3x.png 3x
+            "
+          />
+          <img
+            src="dist/images/logo.png"
+            alt="Fair Rate logo"
+            width="186"
+            height="39"
+          />
+        </picture>
       </a>
       <div class="main-header__right float-r">
         <ul class="nav-holder">
@@ -48,5 +60,226 @@
         </ul>
       </div>
     </header>
+    <main class="page-main">
+      <form method="GET" class="input__holder">
+        <!-- page-1 -->
+        <div class="username-field mx-auto text-center " id="username-field">
+          <h2 class="username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
+          <div class="username__intup-area">
+
+            <div class="input-field__first-name">
+              <input type="text" placeholder="First Name" name="first-name" id="first-name" autocomplete="off">
+            </div>
+
+            <div class="input-field__last-name">
+              <input type="text" placeholder="Last Name" name="last-name" id="last-name" autocomplete="off">
+            </div>
+
+          </div>
+          <span class="username-field__btn primary-btn inline-block " id="pg-one-next">NEXT</span>
+        </div>
+
+        <!-- page-2 -->
+        <div class="user-info-field mx-auto hidden" id="user-info-field" >
+          <div class="user-info-field__left">
+            <div class="user-info-field__left-content">
+            <h2 class="user-info__heading">Fill the form on the right</h2>
+            <p class="user-info__desc">
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+            </p>
+          </div>
+          <label for="date-of-birth" class="inline-block">Date of birth</label>
+            <div class="input-field__dob">
+              <input type="date" name="date-of-birth" id="date-of-birth">
+            </div>
+          </div>
+
+          <div class="user-info-field__right">
+
+            <div class="input-field__address ml-auto">
+              <input type="text" placeholder="Enter the exact address" name="address" id="address" autocomplete="off">
+            </div>
+
+            <div class="input-field__email ml-auto">
+              <input type="email" placeholder="Email Address" name="email" id="email" autocomplete="off">
+            </div>
+
+            <div class="input-field__checkbox ml-auto">
+              <input type="checkbox" name="condo" id="condo">
+              <span class="inline-block">Condo</span>
+            </div>
+            <div class="input-field__checkbox ml-auto">
+              <input type="checkbox" name="co-op" id="co-op">
+              <span class="inline-block">Co-op</span>
+            </div>
+            <div class="input-field__checkbox ml-auto">
+              <input type="checkbox" name="house" id="house">
+              <span class="inline-block">House</span>
+            </div>
+
+            <div class="input-field__dropdown ml-auto">
+              <ul class="input__dropdown">
+                <li class="input__dropdown--item">This month</li>
+                <li class="input__dropdown--item">Next Month</li>
+                <li class="input__dropdown--item">December 2018</li>
+                <li class="input__dropdown--item">january 2019</li>
+                <li class="input__dropdown--item">I don't know</li>
+              </ul>
+            </div>
+
+            <div class="picture-checkbox__holder">
+              <div class="picture-checkbox__left">
+                <span class="inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="48" viewBox="0 0 46 48">
+                  <g fill="#23C0F5" fill-rule="nonzero">
+                      <path d="M21.353 27.266h3.294a.775.775 0 0 0 .771-.778.775.775 0 0 0-.771-.777h-3.294a.775.775 0 0 0-.771.777c0 .43.345.778.771.778z"/>
+                      <path d="M42.843 35.2a.78.78 0 0 0-.068-.031l-5.847-2.267a2.187 2.187 0 0 1-1.288-1.358l-.234-.708c1.309-1.894 1.813-3.753.585-5.609-.556-.84-1.24-1.445-2.083-1.844.367-1.373.566-2.838.566-4.36v-.051h.052c.88 0 1.595-.72 1.595-1.607v-1.659a1.61 1.61 0 0 0-.823-1.405v-1.912C35.298 5.558 29.78 0 23 0c-6.78 0-12.298 5.558-12.298 12.389V14.3a1.61 1.61 0 0 0-.823 1.405v1.659c0 .886.716 1.607 1.595 1.607h.052v.052c0 1.521.2 2.986.566 4.36-.843.398-1.527 1.003-2.083 1.843-1.228 1.856-.724 3.715.585 5.609l-.234.708a2.186 2.186 0 0 1-1.288 1.358L3.225 35.17a.737.737 0 0 0-.068.03A5.727 5.727 0 0 0 0 40.346v5.218A2.43 2.43 0 0 0 2.418 48h41.164A2.43 2.43 0 0 0 46 45.564v-5.218a5.727 5.727 0 0 0-3.157-5.147zm-8.136-9.11c.45.68.818 1.698-.344 3.536-.604.954-1.51 1.968-2.547 3.03a.876.876 0 0 1-.635-.847v-2.833a.787.787 0 0 0-.007-.104 14.535 14.535 0 0 0 2.254-3.99c.506.276.92.666 1.279 1.208zm-21.293-3.8h.19c.544 0 1.055.213 1.442.602a3.543 3.543 0 0 0 2.53 1.056h10.847c.956 0 1.855-.375 2.533-1.058.385-.387.896-.6 1.44-.6h.19c-1.145 5.309-5.008 9.226-9.586 9.226s-8.441-3.917-9.586-9.227zm2.266 11.217a2.437 2.437 0 0 0 .682-1.698v-1.333c1.875 1.634 4.167 2.595 6.638 2.595s4.763-.961 6.638-2.595v1.333c0 .655.255 1.256.682 1.697-2.245 1.413-4.764 2.157-7.32 2.157s-5.075-.744-7.32-2.156zM23 37.218a14.95 14.95 0 0 0 5.169-.93c-2.107 2.157-4.113 4.498-5.169 7.12-1.056-2.622-3.062-4.963-5.169-7.12 1.664.612 3.407.93 5.169.93zm11.577-19.853a.052.052 0 0 1-.051.052h-1.698v-1.763h1.698c.028 0 .051.024.051.052v1.659zm-5.866.052v-1.763h2.573v1.763h-2.573zm-4.94 0v-1.763h3.397v1.763h-3.396zm-4.939 0v-1.763h3.396v1.763h-3.396zm-4.116 0v-1.763h2.573v1.763h-2.573zm14.922-3.318h-3.396v-1.71c0-3.155-.263-6.128-.74-8.374a14.478 14.478 0 0 0-.547-1.973c.973.497 1.874 1.364 2.635 2.557 1.32 2.07 2.048 4.836 2.048 7.79v1.71zm-8.336 0v-1.71c0-2.814.218-5.512.615-7.595.4-2.095.86-2.944 1.083-3.186.222.242.684 1.091 1.083 3.186.397 2.083.615 4.78.615 7.595v1.71h-3.396zm-.257-12.056c-.2.544-.382 1.2-.546 1.973-.478 2.245-.74 5.218-.74 8.373v1.71h-3.397v-1.71c0-2.954.728-5.72 2.048-7.79.761-1.193 1.662-2.06 2.635-2.556zm12.709 10.346v1.71H31.18v-1.71c0-3.249-.814-6.314-2.292-8.631-.17-.267-.348-.52-.531-.76a10.855 10.855 0 0 1 5.396 9.39zM17.642 2.998c-.183.24-.36.493-.53.76-1.479 2.317-2.293 5.382-2.293 8.63V14.1h-2.573v-1.71c0-4.01 2.174-7.518 5.396-9.391zm-6.22 14.367v-1.659c0-.028.024-.052.052-.052h1.698v1.763h-1.698a.052.052 0 0 1-.051-.052zm6.692 1.607l-.002.052v.83c0 .429.345.777.772.777a.775.775 0 0 0 .771-.778v-.83l-.002-.051h6.694l-.002.052v.83c0 .429.345.777.771.777a.775.775 0 0 0 .772-.778v-.83l-.002-.051h5.045v.052c0 .58-.033 1.15-.094 1.71h-.441c-.956 0-1.855.375-2.533 1.059-.385.387-.896.6-1.44.6H17.577a2.017 2.017 0 0 1-1.442-.603 3.543 3.543 0 0 0-2.53-1.056h-.442c-.061-.56-.094-1.13-.094-1.71v-.052h5.045zm-6.82 7.118c.358-.542.772-.932 1.279-1.208a14.535 14.535 0 0 0 2.254 3.99.787.787 0 0 0-.008.104v2.833a.876.876 0 0 1-.634.847c-1.037-1.061-1.944-2.076-2.548-3.03-1.162-1.838-.794-2.855-.344-3.536zm-9.75 19.474v-5.218a4.18 4.18 0 0 1 2.272-3.74l5.81-2.252a3.727 3.727 0 0 0 2.105-2.07c.91 1.05 1.992 2.114 3.093 3.195 3.267 3.21 6.944 6.825 7.364 10.966H9.776v-2.54a.775.775 0 0 0-.772-.777.775.775 0 0 0-.771.777v2.54H2.418a.879.879 0 0 1-.874-.881zm42.912 0a.879.879 0 0 1-.874.88h-5.815v-2.539a.775.775 0 0 0-.771-.778.775.775 0 0 0-.772.778v2.54H23.812c.42-4.141 4.096-7.755 7.364-10.966 1.1-1.081 2.183-2.144 3.093-3.195a3.727 3.727 0 0 0 2.105 2.07l5.81 2.252a4.18 4.18 0 0 1 2.272 3.74v5.218z"/>
+                  </g>
+              </svg>
+              </span>
+              <div class="input-field__pic-checkbox">
+                <input type="checkbox" name="criminal-alarm" id="criminal-alarm">
+                <span>Burglar Alarm</span>
+              </div>
+              </div>
+              <div class="picture-checkbox__right">
+                <span class="inline-block">
+                <svg  width="36" height="48" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="fire" class="svg-inline--fa fa-fire fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                  <path fill="currentColor" d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path>
+                </svg>
+                </span>
+                <label  for="fire-alarm" class="input-field__pic-checkbox">
+                  <input type="checkbox" name="fire-alarm" id="fire-alarm">
+                  <span>Burglar Alarm</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="user-info__btn-holder">
+              <span class="inline-block secondary-btn text-center" id="user-info-back">BACK</span>
+              <span class="inline-block primary-btn text-center" id="user-info-next">NEXT</span>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </form>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="container mx-auto">
+        <div class="footer-wrap">
+          <address class="footer-links">
+            <p>
+              Schedule a conversation <br />
+              <a href="mailto:hello@fairrate.com"> hello@fairrate.com </a>
+            </p>
+            <a
+              class="footer-list-phone inline-block"
+              href="tel:+622025550117 "
+            >
+              <svg width="14" height="14">
+                <use
+                  xlink:href="dist/images/sprite-icon.svg#phone-icon"
+                ></use>
+              </svg>
+              <span> +62 202 555 0117 </span>
+            </a>
+            <div class="social-icon-holder">
+              <a class="inline-block" href="javascript:void(0)">
+                <svg width="33" height="33">
+                  <use xlink:href="dist/images/sprite-icon.svg#twitter"></use>
+                </svg>
+              </a>
+              <a class="inline-block" href="javascript:void(0)">
+                <svg width="33" height="33">
+                  <use
+                    xlink:href="dist/images/sprite-icon.svg#linked-in"
+                  ></use>
+                </svg>
+              </a>
+              <a class="inline-block" href="javascript:void(0)">
+                <svg width="33" height="33">
+                  <use
+                    xlink:href="dist/images/sprite-icon.svg#facebook"
+                  ></use>
+                </svg>
+              </a>
+            </div>
+          </address>
+          <ul class="footer-wrap__nav-holder">
+            <li class="footer-nav-header">COMPANY</li>
+            <li class="footer-nav-item">
+              <a href="javascript:void(0)">Resources</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="javascript:void(0)">Careers</a>
+            </li>
+          </ul>
+          <ul class="footer-wrap__nav-holder">
+            <li class="footer-nav-header">LEGAL</li>
+            <li class="footer-nav-item">
+              <a href="javascript:void(0)">NMLS Consumer Access </a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="javascript:void(0)">Privacy Policy</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="javascript:void(0)">Terms of Use</a>
+            </li>
+            <li class="footer-nav-item">
+              <a href="javascript:void(0)">Disclosures & Licensing</a>
+            </li>
+          </ul>
+          <div class="footer-wrap__content">
+            <a href="javascript:void(0)" class="inline-block">
+              <picture class="inline-block">
+                <source
+                  srcset="
+                    dist/images/logo.png    1x,
+                    dist/images/logo@2x.png 2x,
+                    dist/images/logo@3x.png 3x
+                  "
+                />
+                <img
+                  src="dist/images/logo.png"
+                  alt="Fair Rate logo"
+                  width="186"
+                  height="39"
+                />
+            </a>
+            <p>
+              Fusce dapibus, tellus ac cursus commodo, tortor mauris
+              condimentum nibh, ut fermentum massa justo sit amet risus.
+              Praesent commodo cursus magna.
+            </p>
+          </div>
+        </div>
+        <p class="copy-right">
+          © 2021 <a href="javascript:void(0)"> Deivas.io</a>, Inc. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="dist/js/script.js"></script>
   </body>
 </html>

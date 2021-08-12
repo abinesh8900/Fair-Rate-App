@@ -1,0 +1,15 @@
+.primary-btn,
+.secondary-btn {
+  color: var(--clr-white-primary);
+  width: 180px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 2px;
+  padding-block: 15px;
+}
+.primary-btn {
+  background-color: var(--clr-blue-secondary);
+}
+.secondary-btn {
+  background-color: var(--clr-lb-grey-primary);
+}
