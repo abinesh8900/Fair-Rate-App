@@ -63,7 +63,7 @@
     <main class="page-main">
       <form method="GET" class="input__holder">
         <!-- page-1 -->
-        <div class="username-field mx-auto text-center " id="username-field">
+        <div class="username-field mx-auto text-center hidden" id="username-field">
           <h2 class="username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
           <div class="username__intup-area">
 
@@ -80,7 +80,7 @@
         </div>
 
         <!-- page-2 -->
-        <div class="user-info-field mx-auto hidden" id="user-info-field" >
+        <div class="user-info-field mx-auto " id="user-info-field" >
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
             <h2 class="user-info__heading">Fill the form <span>on the right</span></h2>
@@ -120,7 +120,68 @@
               <label for="house" class="inline-block input-field__checkbox--text">House</label>
             </div>
 
-            <div class="input-field__select ml-auto">
+            <div class="input-field__select ml-auto " id="input-field-select">
+             <p>--Select</p>
+              <span class="inline-block"></span>
+            </div>
+
+            <div class="option-container ml-auto" id="show-select-option">
+              <div class="option-item">
+                <input class="option-item__radio" type="radio" name="select" id="this-month">
+                <label class="block" for="this-month">This month</label>
+              </div>
+
+              <div class="option-item">
+                <input class="option-item__radio" type="radio" name="select" id="next-month">
+                <label class="block" for="next-month">Next Month</label>
+              </div>
+
+              <div class="option-item">
+                <input class="option-item__radio" type="radio" name="select" id="december-2021">
+                <label class="block" for="december-2021">December 2021</label>
+              </div>
+
+              <div class="option-item">
+                <input class="option-item__radio" type="radio" name="select" id="january-2022">
+                <label class="block" for="january-2022">january 2022</label>
+              </div>
+
+              <div class="option-item">
+                <input class="option-item__radio" type="radio" name="select" id="i-dont-know">
+                <label class="block" for="i-dont-know">I don't know</label>
+              </div>
+            </div>
+            <!-- <div class="select-box"> -->
+              <!-- <div class="option-container ml-auto active" id="show-select-option">
+                <div class="option-item">
+                  <input class="option-item__radio" type="radio" name="select" id="this-month">
+                  <label class="block" for="this-month">This month</label>
+                </div>
+
+                <div class="option-item">
+                  <input class="option-item__radio" type="radio" name="select" id="next-month">
+                  <label class="block" for="next-month">Next Month</label>
+                </div>
+
+                <div class="option-item">
+                  <input class="option-item__radio" type="radio" name="select" id="december-2021">
+                  <label class="block" for="december-2021">December 2021</label>
+                </div>
+
+                <div class="option-item">
+                  <input class="option-item__radio" type="radio" name="select" id="january-2022">
+                  <label class="block" for="january-2022">january 2022</label>
+                </div>
+
+                <div class="option-item">
+                  <input class="option-item__radio" type="radio" name="select" id="i-dont-know">
+                  <label class="block" for="i-dont-know">I don't know</label>
+                </div>
+              </div> -->
+            <!-- </div> -->
+
+
+            <!-- <div class="input-field__select ml-auto">
               <select class="input__select">
                <option value="This month">This month</option>
                <option value="Next Month">Next Month</option>
@@ -129,7 +190,9 @@
                <option value="I don't know">I don't know</option>
               </select>
               <span class="inline-block"></span>
-            </div>
+            </div> -->
+
+
 
             <div class="picture-checkbox__holder">
               <div class="picture-checkbox__left">

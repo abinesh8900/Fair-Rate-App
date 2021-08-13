@@ -28,3 +28,28 @@ userInfoBack.addEventListener("click", () => {
   userInfoField.classList.add("hidden");
   showFooter();
 });
+
+const inputSelect = document.getElementById("input-field-select");
+const optionContainer = document.getElementById("show-select-option");
+
+inputSelect.addEventListener("click", () => {
+  optionContainer.classList.toggle("active");
+});
+
+const optionItems = optionContainer.querySelectorAll(".option-item");
+
+optionItems.forEach((optionItem) => {
+  optionItem.addEventListener("click", () => {
+    inputSelect.querySelector("p").innerText =
+      optionItem.querySelector("label").innerText;
+  });
+});
+
+// for (const optionItem of optionItems) {
+//   // console.log(optionItem);
+//   optionItem.addEventListener("click", () => {
+//     // inputSelect.innerText = optionContainer.classList.remove("active");
+//     const items = optionItem.querySelector("label").innerText;
+//     console.log(items);
+//   });
+// }
