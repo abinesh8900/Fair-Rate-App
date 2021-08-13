@@ -116,7 +116,6 @@
     width: 50px;
     background-color: var(--clr-white-primary);
     @include position(absolute, $top: 0, $right: 0, $bottom: 0);
-    // pointer-events: none;
 
     &::after,
     &::before {
@@ -143,14 +142,11 @@
   margin-bottom: 30px;
   background-color: var(--clr-white-primary);
   width: 227px;
-  // height: 0px;
   height: 180px;
   overflow-y: scroll;
   padding-block: 10px;
   border-radius: var(--border-radius);
-  // @include position(absolute, $top: 56px, $right: 0);
   visibility: hidden;
-  // z-index: 2;
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -217,23 +213,11 @@
   }
 }
 .picture-checkbox__left {
-  // &:focus-within {
-  //   border: 1px solid var(--clr-blue-secondary);
-  //   & g[fill] {
-  //     fill: var(--clr-blue-secondary);
-  //   }
-  // }
   & g[fill] {
     fill: var(--clr-d-grey-primary);
   }
 }
 .picture-checkbox__right {
-  // &:focus-within {
-  //   border: 1px solid var(--clr-blue-secondary);
-  //   & path[fill] {
-  //     fill: var(--clr-blue-secondary);
-  //   }
-  // }
   & path[fill] {
     fill: var(--clr-d-grey-primary);
   }

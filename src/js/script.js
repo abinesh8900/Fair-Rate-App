@@ -31,17 +31,17 @@ userInfoBack.addEventListener("click", () => {
 
 const inputSelect = document.getElementById("input-field-select");
 const optionContainer = document.getElementById("show-select-option");
+const optionItems = optionContainer.querySelectorAll(".option-item");
 
 inputSelect.addEventListener("click", () => {
   optionContainer.classList.toggle("active");
 });
 
-const optionItems = optionContainer.querySelectorAll(".option-item");
-
 optionItems.forEach((optionItem) => {
   optionItem.addEventListener("click", () => {
-    inputSelect.querySelector("p").innerText =
-      optionItem.querySelector("label").innerText;
+    inputSelect.querySelector("p").innerHTML =
+      optionItem.querySelector("label").innerHTML;
+    optionContainer.classList.remove("active");
   });
 });
 
