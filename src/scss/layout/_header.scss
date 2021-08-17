@@ -56,7 +56,7 @@
 .nav-holder,
 .main-header__user,
 .user__dropdown {
-  @include flex-container($align-item: center);
+  @include flex-container($align-items: center);
 }
 .nav-holder {
   margin-right: 30px;

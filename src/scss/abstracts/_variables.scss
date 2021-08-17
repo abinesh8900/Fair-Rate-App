@@ -7,7 +7,6 @@ $colors: (
   grey: (
     primary: #919eab,
     secondary: #637381,
-    tertiary: #919eab,
   ),
   d-grey: (
     primary: #212b36,
@@ -19,6 +18,7 @@ $colors: (
   lb-grey:
     (
       primary: #c4cdd5,
+      secondary: #dfe3e8,
     ),
   white: (
     primary: #ffffff,
@@ -26,12 +26,13 @@ $colors: (
     tertiary: #dee3e7,
     quaternary: #f9fafb,
     quinary: #e7e7e7,
+    senary: #fafafa,
   ),
   blue: (
     primary: #23c0f5,
     secondary: #4ad5f6,
   ),
+  red: (
+    primary: #f75555,
+  ),
 );
-.cc {
-  color: #dfe3e84d;
-}

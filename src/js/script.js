@@ -5,6 +5,9 @@ const userInfoField = document.getElementById("user-info-field");
 const userInfoNext = document.getElementById("user-info-next");
 const userInfoBack = document.getElementById("user-info-back");
 
+const browesFileBtn = document.getElementById("browes-btn");
+const browesFileInput = document.getElementById("photo-proof");
+
 const showFooter = function () {
   footer.classList.remove("hidden");
 };
@@ -39,17 +42,96 @@ inputSelect.addEventListener("click", () => {
 
 optionItems.forEach((optionItem) => {
   optionItem.addEventListener("click", () => {
-    inputSelect.querySelector("p").innerHTML =
-      optionItem.querySelector("label").innerHTML;
+    inputSelect.querySelector("p").textContent =
+      optionItem.querySelector("label").textContent;
     optionContainer.classList.remove("active");
   });
 });
 
-// for (const optionItem of optionItems) {
-//   // console.log(optionItem);
-//   optionItem.addEventListener("click", () => {
-//     // inputSelect.innerText = optionContainer.classList.remove("active");
-//     const items = optionItem.querySelector("label").innerText;
-//     console.log(items);
-//   });
+// validation
+
+const checkFirstName = function () {
+  const firstName = document.getElementById("first-name");
+  const firstNameValue = firstName.value.trim();
+  // console.log(firstNameValue);
+  // let flag = 0;
+  if (firstNameValue === "") {
+    setErrorFor(firstName, "First Name can't be blank");
+    return 0;
+  } else {
+    setSuccessFor(firstName);
+    return 1;
+  }
+};
+
+const checkLastName = function () {
+  const lastName = document.getElementById("last-name");
+  const lastNameValue = lastName.value.trim();
+
+  if (lastNameValue === "") {
+    setErrorFor(lastName, "Last name can't be blank");
+    return 0;
+  } else {
+    setSuccessFor(lastName);
+    return 1;
+  }
+};
+
+// const compareFirstName = checkFirstName();
+// const compareLastName = checkLastName();
+
+// if (compareLastName === 1 && compareFirstName === 1) {
+//   console.log("show btn");
+// } else {
+//   console.log("hide it");
 // }
+
+const checkAddress = function () {
+  const address = document.getElementById("address");
+  const addressValue = address.value.trim();
+  const addressFormate = /^[a-zA-Z0-9\s,'-]*$/;
+
+  if (addressValue === "") {
+    setErrorFor(address, "Address is can't be blank");
+  } else if (addressValue.match(addressFormate)) {
+    setSuccessFor(address);
+  } else {
+    setErrorFor(address, "Address is invalid");
+  }
+};
+
+const checkEmail = function () {
+  const email = document.getElementById("email");
+  const emailValue = email.value.trim();
+  const emailFormat =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+  if (emailValue === "") {
+    setErrorFor(email, "Email can't be blank");
+  } else if (emailValue.match(emailFormat)) {
+    setSuccessFor(email);
+  } else {
+    setErrorFor(email, "Invalid email");
+  }
+};
+
+function setErrorFor(input, message) {
+  const inputHolder = input.parentElement;
+  const errorMessage = inputHolder.querySelector(".input-error-msg");
+  inputHolder.classList.add("error");
+  inputHolder.classList.remove("success");
+  errorMessage.innerText = message;
+}
+
+function setSuccessFor(input) {
+  const inputHolder = input.parentElement;
+  inputHolder.classList.add("success");
+  inputHolder.classList.remove("error");
+}
+
+// browesFileBtn.onclick = () => {
+//   browesFileInput.click();
+// };
+browesFileBtn.addEventListener("click", () => {
+  browesFileInput.click();
+});

@@ -16,8 +16,14 @@
 .input-field__dob,
 .input-field__address,
 .input-field__email {
-  @include input-field(380px);
+  @include input-field(380px, 328px);
   margin-bottom: 30px;
+}
+.input-field__icon--address,
+.input-field__icon--email {
+  width: 20px;
+  font-size: 20px;
+  margin-right: 10px;
 }
 .user-info-field__left-content {
   max-width: 300px;
@@ -107,7 +113,7 @@
 .input-field__select {
   margin-top: 30px;
   margin-bottom: 13px;
-  @include input-field(380px);
+  @include input-field(380px, 100%);
   @include position(relative);
   line-height: 45px;
   cursor: pointer;

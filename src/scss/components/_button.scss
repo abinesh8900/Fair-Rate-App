@@ -14,6 +14,6 @@
   background-color: var(--clr-lb-grey-primary);
 }
 .primary-btn.disable {
-  cursor: auto;
-  opacity: 0.5;
+  opacity: 0.6;
+  pointer-events: none;
 }

@@ -1,18 +1,22 @@
 @mixin flex-container(
-  $align-item: false,
+  $align-items: false,
   $justify-content: false,
-  $flex-wrap: false
+  $flex-wrap: false,
+  $flex-direction: false
 ) {
   display: flex;
 
-  @if $align-item != false {
-    align-items: $align-item;
+  @if $align-items != false {
+    align-items: $align-items;
   }
   @if $justify-content != false {
     justify-content: $justify-content;
   }
   @if $flex-wrap != false {
     flex-wrap: $flex-wrap;
+  }
+  @if $flex-direction != false {
+    flex-direction: $flex-direction;
   }
 }
 @mixin input-area-heading($mb) {
@@ -37,22 +41,57 @@
 //     line-height: 1.43;
 //   }
 // }
-@mixin input-field($width) {
+@mixin input-field($width, $input-area-width) {
   width: $width;
   height: 46px;
   border: 1px solid var(--clr-lb-grey-primary);
   background-color: var(--clr-white-primary);
-  padding-left: 17px;
+  padding-left: 15px;
   border-radius: 3px;
+  @include position(relative);
 
   & > input {
-    width: 100%;
+    width: $input-area-width;
     height: 100%;
     font-size: 16px;
     line-height: 1.43;
   }
-  &:focus-within {
+  &:focus-within,
+  &.success {
     border: 1px solid var(--clr-blue-secondary);
+  }
+
+  &.error {
+    border: 1px solid var(--clr-red-primary);
+  }
+  & .input-success,
+  & .input-error {
+    display: none;
+  }
+  & .input-error-msg {
+    font-size: 12px;
+    text-align: left;
+    margin-top: 7px;
+    color: var(--clr-red-primary);
+    visibility: hidden;
+  }
+  &.error .input-error-msg {
+    visibility: visible;
+  }
+  &.success .input-success,
+  &.error .input-error {
+    @include position(absolute, $top: 50%, $right: 5px);
+    font-size: 20px;
+    font-weight: 600;
+    display: inline-block;
+  }
+  &.error .input-error {
+    color: var(--clr-red-primary);
+    transform: translate(-50%, -50%);
+  }
+  &.success .input-success {
+    color: var(--clr-blue-secondary);
+    transform: rotateZ(45deg) rotateY(180deg) translate(10px, -5px);
   }
 }
 

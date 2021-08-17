@@ -17,10 +17,10 @@
 }
 .username__intup-area {
   padding: 0 20px;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   @include flex-container($justify-content: space-between);
 }
 .input-field__first-name,
 .input-field__last-name {
-  @include input-field(238px);
+  @include input-field(238px, 100%);
 }
