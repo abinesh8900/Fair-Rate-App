@@ -29,7 +29,7 @@
   max-width: 300px;
 }
 .user-info__heading {
-  @include input-area-heading(9px);
+  margin-bottom: 9px;
 }
 .user-info__desc {
   font-size: 14px;
@@ -113,33 +113,13 @@
 .input-field__select {
   margin-top: 30px;
   margin-bottom: 13px;
-  @include input-field(380px, 100%);
-  @include position(relative);
+  width: 380px;
+  height: 46px;
   line-height: 45px;
   cursor: pointer;
 
   & > span {
-    width: 50px;
-    background-color: var(--clr-white-primary);
-    @include position(absolute, $top: 0, $right: 0, $bottom: 0);
-
-    &::after,
-    &::before {
-      content: "";
-      display: block;
-      border: 4px solid transparent;
-      @include position(absolute);
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &::before {
-      border-bottom-color: var(--clr-grey-secondary);
-      top: 28%;
-    }
-    &::after {
-      border-top-color: var(--clr-grey-secondary);
-      top: 62%;
-    }
+    @include input-select-arrow($width: 50px);
   }
 }
 

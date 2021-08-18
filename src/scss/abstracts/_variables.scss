@@ -8,6 +8,9 @@ $colors: (
     primary: #919eab,
     secondary: #637381,
   ),
+  o-grey: (
+    primary: #a4a4a436,
+  ),
   d-grey: (
     primary: #212b36,
     secondary: #454f5b,
@@ -19,6 +22,7 @@ $colors: (
     (
       primary: #c4cdd5,
       secondary: #dfe3e8,
+      tertiary: #ecedf0,
     ),
   white: (
     primary: #ffffff,
@@ -28,9 +32,15 @@ $colors: (
     quinary: #e7e7e7,
     senary: #fafafa,
   ),
+  d-blue: (
+    primary: #007ace,
+  ),
   blue: (
     primary: #23c0f5,
     secondary: #4ad5f6,
+  ),
+  g-blue: (
+    primary: #47c1bf,
   ),
   red: (
     primary: #f75555,

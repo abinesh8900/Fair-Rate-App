@@ -65,18 +65,18 @@
         <!--  -->
         <!--  -->
         <!-- page-1 -->
-        <div class="username-field mx-auto text-center" id="username-field" style="display: none;">
-          <h2 class="username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
+        <section class="username-field mx-auto text-center" id="username-field" style="display: none;">
+          <h2 class="input-area-heading username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
           <div class="username__intup-area">
 
-            <div class="input-field__first-name">
+            <div class="input-field__first-name input-field">
               <input type="text" placeholder="First Name" name="first-name" id="first-name" autocomplete="off" onchange="checkFirstName()">
               <span class="input-success">L</span>
               <span class="input-error">!</span>
               <p class="input-error-msg">error message</p>
             </div>
 
-            <div class="input-field__last-name">
+            <div class="input-field__last-name input-field">
               <input type="text" placeholder="Last Name" name="last-name" id="last-name" autocomplete="off" onchange="checkLastName()">
               <span class="input-success">L</span>
               <span class="input-error">!</span>
@@ -85,28 +85,28 @@
 
           </div>
           <span class="primary-btn inline-block disable" id="pg-one-next">NEXT</span>
-        </div>
+        </section>
 
         <!--  -->
         <!--  -->
         <!-- page-2 -->
-        <div class="user-info-field mx-auto " id="user-info-field" style="display: none;">
+        <section class="user-info-field mx-auto " id="user-info-field" style="display: none;">
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
-            <h2 class="user-info__heading">Fill the form <span>on the right</span></h2>
+            <h2 class="user-info__heading input-area-heading">Fill the form <span>on the right</span></h2>
             <p class="user-info__desc">
               Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
             </p>
           </div>
           <label for="date-of-birth" class="inline-block">Date of birth</label>
-            <div class="input-field__dob">
+            <div class="input-field__dob input-field">
               <input type="date" name="date-of-birth" id="date-of-birth">
             </div>
           </div>
 
           <div class="user-info-field__right">
 
-            <div class="input-field__address ml-auto">
+            <div class="input-field__address ml-auto input-field">
           <span class="input-field__icon--address inline-block far fa-map-marker-alt"></span>
               <input type="text" placeholder="Enter the exact address" name="address" id="address" autocomplete="off" onchange="checkAddress()">
               <span class="input-success">L</span>
@@ -114,7 +114,7 @@
               <p class="input-error-msg">error message</p>
             </div>
 
-            <div class="input-field__email ml-auto">
+            <div class="input-field__email ml-auto input-field">
               <span class="input-field__icon--email inline-block far fa-envelope"></span>
               <input type="email" placeholder="Email Address" name="email" id="email" autocomplete="off" onchange="checkEmail()">
               <span class="input-success">L</span>
@@ -138,9 +138,9 @@
               <label for="house" class="inline-block input-field__checkbox--text">House</label>
             </div>
 
-            <div class="input-field__select ml-auto " id="input-field-select">
+            <div class="input-field__select ml-auto input-field" id="input-field-select">
              <p>--Select</p>
-              <span class="inline-block"></span>
+              <span class="inline-block select-arrow"></span>
             </div>
 
             <div class="option-container ml-auto" id="show-select-option">
@@ -208,12 +208,12 @@
               <span class="inline-block primary-btn text-center" id="user-info-next">NEXT</span>
             </div>
           </div>
-        </div>
+        </section>
         
 
         <!-- page 3 -->
-        <div class="upload-page">
-          <h2 class="upload-page__heading text-center">Few more step ahead upload your ID Document 👆</h2>
+        <section class="upload-page mx-auto" style="display: none;">
+          <h2 class="upload-page__heading input-area-heading text-center">Few more step ahead upload your ID Document 👆</h2>
           <div class="select-proof__holder">
             <span class="inline-block photo-proof__btn text-center selected">Photo Indentification</span>
             <span class="inline-block address-proof__btn text-center">Proof of Address</span>
@@ -277,7 +277,319 @@
               <span class="inline-block secondary-btn text-center" id="upload-page-back">BACK</span>
               <span class="inline-block primary-btn text-center" id="uplode-page-next">NEXT</span>
             </div>
-          </div>
+        </section>
+
+
+        <!--  -->
+        <!--  -->
+        <!-- page 4 -->
+        <section class="result-page mx-auto">
+          <h2 class="result-page__heading input-area-heading text-center">Your fairest results</h2>
+          <p class="result-page__caption text-center">16 Results for <span>30</span>  years xied in <span>64117</span> </p>
+          <div class="select-area">
+              <div class="input-year__select input-field inline-block" id="input-year-select">
+                <p>15 years</p>
+                 <span class="inline-block select-arrow"></span>
+               </div>
+               <div class="input-price__select input-field inline-block" id="input-price-select">
+                <p>Fixed price</p>
+                 <span class="inline-block select-arrow"></span>
+               </div>
+               <span class="inline-block filter-btn text-center">Filter Results</span>
+
+               <div class="input-price__select input-field inline-block float-r" id="input-price-select">
+                <span class="select-placeholder">Sort by:</span><p class="inline-block">&nbsp;Fairest</p>
+                 <span class="inline-block select-arrow"></span>
+               </div>
+           </div>
+           <div class="result-container">
+             <div class="result-header">
+               <div class=" result-header__logo"><p>Lender</p> </div>
+               <div class="result-header__apr">
+                 <span class="arrow"></span>
+                  <p class="inline-block">APR</p>
+                 <a href="javascript:void(0)" class="icon inline-block"><img src="dist/images/question.png" alt="question" width="18px"></a>
+               </div>
+              <div class="result-header__rate">
+                <span class="arrow"></span>
+                 <p>Rate</p>
+              </div>
+              <div class="result-header__fees">
+                <span class="arrow"></span>
+                <p class="inline-block">Est. Payment/Fees </p>
+                <a  href="javascript:void(0)" class="icon initial-block"><img src="dist/images/question.png" alt="question" width="18px"></a>
+              </div>
+              <div class="result-header__question"><p>Questions?</p></div>
+              <div class="result-header__apply"><p>Apply Now</p></div>
+             </div>
+             <div class="result-body">
+
+               <div class="result-body-items">
+                <div class="result-body-items__logo-data">
+                  <a class="inline-block text-center" href="javascript:void(0)">
+                    <img src="dist/images/loan-lock.png" alt="loan-lock">
+                  </a>
+                  <p class="result-body-items__caption">NMLS ID: 7707</p>
+                </div>
+                <div class="result-body-items__apr-data">
+                  <p class="result-body-items__large-text">3.6% APR</p>
+                  <p class="result-body-items__caption">Mar 10</p>
+                </div>
+                <div class="result-body-items__rate-data">
+                  <p  class="result-body-items__dark-text">3.500% Rate</p>
+                  <p  class="result-body-items__caption">1 Point</p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__fees-data">
+                  <p class="result-body-items__large-text inline-block">$898.09</p>
+                  <span  class="result-body-items__caption">/mo</span>
+                  <p  class="result-body-items__caption">1 Point </p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__qusetion-data">
+                  <a  class="result-body-items__dark-text inline-block" href="tel:+887407-37123">(887) 407 - 37123</a>
+                  <p class="result-body-items__caption">Toll-free, no obligations</p>
+                </div>
+                <div class="result-body-items__apply-btn">
+                  <span class="inline-block text-center float-r">NEXT</span>
+                </div>
+               </div>
+               
+               <div class="result-body-items">
+                <div class="result-body-items__logo-data">
+                  <a class="inline-block text-center" href="javascript:void(0)">
+                    <img src="dist/images/merix.png" alt="loan-lock">
+                  </a>
+                  <p class="result-body-items__caption">NMLS ID: 7707</p>
+                </div>
+                <div class="result-body-items__apr-data">
+                  <p class="result-body-items__large-text">3.6% APR</p>
+                  <p class="result-body-items__caption">Mar 10</p>
+                </div>
+                <div class="result-body-items__rate-data">
+                  <p  class="result-body-items__dark-text">3.500% Rate</p>
+                  <p  class="result-body-items__caption">1 Point</p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__fees-data">
+                  <p class="result-body-items__large-text inline-block">$898.09</p>
+                  <span  class="result-body-items__caption">/mo</span>
+                  <p  class="result-body-items__caption">1 Point </p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__qusetion-data">
+                  <a  class="result-body-items__dark-text inline-block" href="tel:+887407-37123">(887) 407 - 37123</a>
+                  <p class="result-body-items__caption">Toll-free, no obligations</p>
+                </div>
+                <div class="result-body-items__apply-btn">
+                  <span class="inline-block text-center float-r">NEXT</span>
+                </div>
+               </div>
+
+               <div class="result-body-items">
+                <div class="result-body-items__logo-data">
+                  <a class="inline-block text-center" href="javascript:void(0)">
+                    <img src="dist/images/cmls-financial.png" alt="loan-lock">
+                  </a>
+                  <p class="result-body-items__caption">NMLS ID: 7707</p>
+                </div>
+                <div class="result-body-items__apr-data">
+                  <p class="result-body-items__large-text">3.6% APR</p>
+                  <p class="result-body-items__caption">Mar 10</p>
+                </div>
+                <div class="result-body-items__rate-data">
+                  <p  class="result-body-items__dark-text">3.500% Rate</p>
+                  <p  class="result-body-items__caption">1 Point</p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__fees-data">
+                  <p class="result-body-items__large-text inline-block">$898.09</p>
+                  <span  class="result-body-items__caption">/mo</span>
+                  <p  class="result-body-items__caption">1 Point </p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__qusetion-data">
+                  <a  class="result-body-items__dark-text inline-block" href="tel:+887407-37123">(887) 407 - 37123</a>
+                  <p class="result-body-items__caption">Toll-free, no obligations</p>
+                </div>
+                <div class="result-body-items__apply-btn">
+                  <span class="inline-block text-center float-r">NEXT</span>
+                </div>
+               </div>
+
+               <div class="result-body-items">
+                <div class="result-body-items__logo-data">
+                  <a class="inline-block text-center" href="javascript:void(0)">
+                    <img src="dist/images/b2b-bank.png" alt="loan-lock">
+                  </a>
+                  <p class="result-body-items__caption">NMLS ID: 7707</p>
+                </div>
+                <div class="result-body-items__apr-data">
+                  <p class="result-body-items__large-text">3.6% APR</p>
+                  <p class="result-body-items__caption">Mar 10</p>
+                </div>
+                <div class="result-body-items__rate-data">
+                  <p  class="result-body-items__dark-text">3.500% Rate</p>
+                  <p  class="result-body-items__caption">1 Point</p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__fees-data">
+                  <p class="result-body-items__large-text inline-block">$898.09</p>
+                  <span  class="result-body-items__caption">/mo</span>
+                  <p  class="result-body-items__caption">1 Point </p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__qusetion-data">
+                  <a  class="result-body-items__dark-text inline-block" href="tel:+887407-37123">(887) 407 - 37123</a>
+                  <p class="result-body-items__caption">Toll-free, no obligations</p>
+                </div>
+                <div class="result-body-items__apply-btn">
+                  <span class="inline-block text-center float-r">NEXT</span>
+                </div>
+               </div>
+
+               <div class="result-body-items">
+                <div class="result-body-items__logo-data">
+                  <a class="inline-block text-center" href="javascript:void(0)">
+                    <img src="dist/images/rmg-mortgages.png" alt="loan-lock">
+                  </a>
+                  <p class="result-body-items__caption">NMLS ID: 7707</p>
+                </div>
+                <div class="result-body-items__apr-data">
+                  <p class="result-body-items__large-text">3.6% APR</p>
+                  <p class="result-body-items__caption">Mar 10</p>
+                </div>
+                <div class="result-body-items__rate-data">
+                  <p  class="result-body-items__dark-text">3.500% Rate</p>
+                  <p  class="result-body-items__caption">1 Point</p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__fees-data">
+                  <p class="result-body-items__large-text inline-block">$898.09</p>
+                  <span  class="result-body-items__caption">/mo</span>
+                  <p  class="result-body-items__caption">1 Point </p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__qusetion-data">
+                  <a  class="result-body-items__dark-text inline-block" href="tel:+887407-37123">(887) 407 - 37123</a>
+                  <p class="result-body-items__caption">Toll-free, no obligations</p>
+                </div>
+                <div class="result-body-items__apply-btn">
+                  <span class="inline-block text-center float-r">NEXT</span>
+                </div>
+               </div>
+
+               <div class="result-body-items">
+                <div class="result-body-items__logo-data">
+                  <a class="inline-block text-center" href="javascript:void(0)">
+                    <img src="dist/images/equitable-bank.png" alt="loan-lock">
+                  </a>
+                  <p class="result-body-items__caption">NMLS ID: 7707</p>
+                </div>
+                <div class="result-body-items__apr-data">
+                  <p class="result-body-items__large-text">3.6% APR</p>
+                  <p class="result-body-items__caption">Mar 10</p>
+                </div>
+                <div class="result-body-items__rate-data">
+                  <p  class="result-body-items__dark-text">3.500% Rate</p>
+                  <p  class="result-body-items__caption">1 Point</p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__fees-data">
+                  <p class="result-body-items__large-text inline-block">$898.09</p>
+                  <span  class="result-body-items__caption">/mo</span>
+                  <p  class="result-body-items__caption">1 Point </p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__qusetion-data">
+                  <a  class="result-body-items__dark-text inline-block" href="tel:+887407-37123">(887) 407 - 37123</a>
+                  <p class="result-body-items__caption">Toll-free, no obligations</p>
+                </div>
+                <div class="result-body-items__apply-btn">
+                  <span class="inline-block text-center float-r">NEXT</span>
+                </div>
+               </div>
+
+               <div class="result-body-items">
+                <div class="result-body-items__logo-data">
+                  <a class="inline-block text-center" href="javascript:void(0)">
+                    <img src="dist/images/wealthline.png" alt="loan-lock">
+                  </a>
+                  <p class="result-body-items__caption">NMLS ID: 7707</p>
+                </div>
+                <div class="result-body-items__apr-data">
+                  <p class="result-body-items__large-text">3.6% APR</p>
+                  <p class="result-body-items__caption">Mar 10</p>
+                </div>
+                <div class="result-body-items__rate-data">
+                  <p  class="result-body-items__dark-text">3.500% Rate</p>
+                  <p  class="result-body-items__caption">1 Point</p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__fees-data">
+                  <p class="result-body-items__large-text inline-block">$898.09</p>
+                  <span  class="result-body-items__caption">/mo</span>
+                  <p  class="result-body-items__caption">1 Point </p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__qusetion-data">
+                  <a  class="result-body-items__dark-text inline-block" href="tel:+887407-37123">(887) 407 - 37123</a>
+                  <p class="result-body-items__caption">Toll-free, no obligations</p>
+                </div>
+                <div class="result-body-items__apply-btn">
+                  <span class="inline-block text-center float-r">NEXT</span>
+                </div>
+               </div>
+
+               <div class="result-body-items">
+                <div class="result-body-items__logo-data">
+                  <a class="inline-block text-center" href="javascript:void(0)">
+                    <img src="dist/images/national-bank-of-canada.png" alt="loan-lock">
+                  </a>
+                  <p class="result-body-items__caption">NMLS ID: 7707</p>
+                </div>
+                <div class="result-body-items__apr-data">
+                  <p class="result-body-items__large-text">3.6% APR</p>
+                  <p class="result-body-items__caption">Mar 10</p>
+                </div>
+                <div class="result-body-items__rate-data">
+                  <p  class="result-body-items__dark-text">3.500% Rate</p>
+                  <p  class="result-body-items__caption">1 Point</p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__fees-data">
+                  <p class="result-body-items__large-text inline-block">$898.09</p>
+                  <span  class="result-body-items__caption">/mo</span>
+                  <p  class="result-body-items__caption">1 Point </p>
+                  <p  class="result-body-items__caption">30 Rate Lock</p>
+                </div>
+                <div class="result-body-items__qusetion-data">
+                  <a  class="result-body-items__dark-text inline-block" href="tel:+887407-37123">(887) 407 - 37123</a>
+                  <p class="result-body-items__caption">Toll-free, no obligations</p>
+                </div>
+                <div class="result-body-items__apply-btn">
+                  <span class="inline-block text-center float-r">NEXT</span>
+                </div>
+               </div>
+
+               <div class="result-footer mx-auto">
+                 <span class="inline-block result-footer__btn result-footer__btn--pervious text-center">
+                  <svg width="20" height="20"aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z">
+                    </path>
+                  </svg>
+                 </span>
+                 <span class="inline-block result-footer__btn result-footer__btn--next text-center">
+                  <svg width="20" height="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+                    </path>
+                  </svg>
+                 </span>
+               </div>
+
+             </div>
+           </div>
+          </section>
 
 
 

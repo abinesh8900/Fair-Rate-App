@@ -34,3 +34,17 @@
   line-height: 1.43;
   color: var(--clr-l-grey-primary);
 }
+.input-area-heading {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--clr-d-grey-primary);
+  // margin-bottom: $mb;
+  line-height: 1.2;
+}
+.input-field {
+  border: 1px solid var(--clr-lb-grey-primary);
+  background-color: var(--clr-white-primary);
+  padding-left: 15px;
+  border-radius: 3px;
+  @include position(relative);
+}

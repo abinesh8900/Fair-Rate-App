@@ -1,10 +1,9 @@
 .upload-page {
   max-width: 670px;
   padding-inline: 20px;
-  margin-inline: auto;
 }
 .upload-page__heading {
-  @include input-area-heading(49px);
+  margin-bottom: 49px;
 }
 .select-proof__holder {
   @include flex-container($justify-content: center);
