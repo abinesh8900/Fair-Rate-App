@@ -49,14 +49,23 @@
   background-color: var(--clr-white-primary);
   border-radius: 3px;
   margin-bottom: 10px;
+  padding-left: 15px;
 
-  & > input {
-    margin: 0;
-    visibility: hidden;
-  }
+  // & > input {
+  //   margin: 0;
+  //   visibility: hidden;
+  // }
   &--text {
     margin-left: 10px;
   }
+
+  // & .checkbox__condo,
+  // & .checkbox__co-op,
+  // & .checkbox__house {
+  //   width: 30px;
+  //   height: 30px;
+  //   border: 1px solid var(--clr-lb-grey-primary);
+  // }
 }
 #condo:checked + .checkmark::after,
 #co-op:checked + .checkmark::after,

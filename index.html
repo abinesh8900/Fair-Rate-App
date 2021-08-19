@@ -60,12 +60,13 @@
         </ul>
       </div>
     </header>
+
     <main class="page-main">
       <form method="GET" class="input__holder">
         <!--  -->
         <!--  -->
         <!-- page-1 -->
-        <section class="username-field mx-auto text-center" id="username-field" >
+        <section class="username-field mx-auto text-center" id="username-field" style="display: none;">
           <h2 class="input-area-heading username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
           <div class="username__intup-area">
 
@@ -90,7 +91,7 @@
         <!--  -->
         <!--  -->
         <!-- page-2 -->
-        <section class="user-info-field mx-auto " id="user-info-field" >
+        <section class="user-info-field mx-auto " id="user-info-field" style="display: none;">
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
             <h2 class="user-info__heading input-area-heading">Fill the form <span>on the right</span></h2>
@@ -123,18 +124,18 @@
             </div>
 
             <div class="input-field__checkbox ml-auto">
-              <input type="checkbox" name="condo" id="condo">
-              <label for="condo" class="checkmark"></label>
+              <input type="checkbox" name="condo" id="condo" hidden>
+              <label for="condo" class="checkmark primary-checkbox"></label>
               <label for="condo" class="inline-block input-field__checkbox--text">Condo</label>
             </div>
             <div class="input-field__checkbox ml-auto">
-              <input type="checkbox" name="co-op" id="co-op">
-              <label for="co-op" class="checkmark"></label>
+              <input type="checkbox" name="co-op" id="co-op" hidden>
+              <label for="co-op" class="checkmark primary-checkbox"></label>
               <label for="co-op" class="inline-block input-field__checkbox--text">Co-op</label>
             </div>
             <div class="input-field__checkbox ml-auto">
-              <input type="checkbox" name="house" id="house">
-              <label for="house" class="checkmark"></label>
+              <input type="checkbox" name="house" id="house" hidden>
+              <label for="house" class="checkmark primary-checkbox"></label>
               <label for="house" class="inline-block input-field__checkbox--text">House</label>
             </div>
 
@@ -184,8 +185,8 @@
               </svg>
               </span>
               <div class="input-field__pic-checkbox">
-                <input type="checkbox" name="criminal-alarm" id="criminal-alarm">
-                <label for="criminal-alarm" class="checkmark"></label>
+                <input type="checkbox" name="criminal-alarm" id="criminal-alarm" hidden>
+                <label for="criminal-alarm" class="checkmark primary-checkbox"></label>
                 <label for="criminal-alarm" class="inline-block input-field__pic-checkbox--text">Burglar Alarm</label>
               </div>
               </div>
@@ -196,8 +197,8 @@
                 </svg>
                 </span>
                 <div class="input-field__pic-checkbox">
-                  <input type="checkbox" name="fire-alarm" id="fire-alarm">
-                  <label for="fire-alarm" class="checkmark"></label>
+                  <input type="checkbox" name="fire-alarm" id="fire-alarm" hidden>
+                  <label for="fire-alarm" class="checkmark primary-checkbox"></label>
                   <label for="fire-alarm" class="inline-block input-field__pic-checkbox--text">Burglar Alarm</label>
                 </div>
               </div>
@@ -212,7 +213,7 @@
         
 
         <!-- page 3 -->
-        <section class="upload-page mx-auto" >
+        <section class="upload-page mx-auto" style="display: none;">
           <h2 class="upload-page__heading input-area-heading text-center">Few more step ahead upload your ID Document 👆</h2>
           <div class="select-proof__holder">
             <span class="inline-block photo-proof__btn text-center selected">Photo Indentification</span>
@@ -283,7 +284,7 @@
         <!--  -->
         <!--  -->
         <!-- page 4 -->
-        <section class="result-page mx-auto">
+        <section class="result-page mx-auto" style="display: none;">
           <h2 class="result-page__heading input-area-heading text-center">Your fairest results</h2>
           <p class="result-page__caption text-center">16 Results for <span>30</span>  years xied in <span>64117</span> </p>
           <div class="select-area">
@@ -355,7 +356,7 @@
                 </div>
                </div>
                
-               <div class="result-body-items">
+               <!-- <div class="result-body-items">
                 <div class="result-body-items__logo-data">
                   <a class="inline-block text-center" href="javascript:void(0)">
                     <img src="dist/images/merix.png" alt="loan-lock">
@@ -570,7 +571,7 @@
                 <div class="result-body-items__apply-btn">
                   <span class="inline-block text-center float-r">NEXT</span>
                 </div>
-               </div>
+               </div> -->
 
                <div class="result-footer mx-auto">
                  <span class="inline-block result-footer__btn result-footer__btn--pervious text-center">
@@ -589,6 +590,207 @@
 
              </div>
            </div>
+          </section>
+
+          <!--  -->
+          <!--  -->
+          <!--page 5-->
+          <section class="pricing mx-auto">
+            <h2 class="input-area-heading pricing__heading text-center">Your fairest results</h2>
+            <div class="pricing-container">
+              <div class="pricing-list-holder">
+                <div class="pricing-list-header">
+                  <p class="col1">RATE TYPE</p>
+                  <p class="col2">FAIR RATE / APR</p>
+                  <p class="col3">POINTS/CREDITS</p>
+                  <p class="col4">PER MONTH</p>
+                </div>
+
+                <div class="pricing-list-items row1">
+                  <div class="col1">
+                    <span class="inline-block pricing-duration">15 years</span>
+                    <span class="inline-block pricing-type">Fixed</span>
+                  </div>
+                  <div class="col2">
+                    <p class="pricing-percentage"><span>4.250%</span> / 5.125%</p>
+                  </div>
+                  <div class="col3">
+                    <span class="pricing-points">-$1,532</span><span class="inline-block pricing-points-bar"></span>
+                  </div>
+                  <div class="col4">
+                    <span class="pricing-pre-month">$3,120</span><span class="inline-block pricing-pre-month-bar"></span>
+                  </div>
+                </div>
+
+                <div class="pricing-list-items row2">
+                  <div class="col1">
+                    <span class="inline-block pricing-duration">20 years</span>
+                    <span class="inline-block pricing-type">Fixed</span>
+                  </div>
+                  <div class="col2">
+                    <p class="pricing-percentage"><span>4.650%</span> / 5.215%</p>
+                  </div>
+                  <div class="col3">
+                    <span class="pricing-points">-$625</span><span class="inline-block pricing-points-bar"></span>
+                  </div>
+                  <div class="col4">
+                    <span class="pricing-pre-month">$2,585</span><span class="inline-block pricing-pre-month-bar"></span>
+                  </div>
+                </div>
+                
+                <div class="pricing-list-items row3">
+                  <div class="col1">
+                    <span class="inline-block pricing-duration">30 years</span>
+                    <span class="inline-block pricing-type">Fixed</span>
+                  </div>
+                  <div class="col2">
+                    <p class="pricing-percentage"><span>4.875%</span> / 40875%</p>
+                  </div>
+                  <div class="col3">
+                    <span class="pricing-points">-$1,625</span><span class="inline-block pricing-points-bar"></span>
+                  </div>
+                  <div class="col4">
+                    <span class="pricing-pre-month">$2,585</span><span class="inline-block pricing-pre-month-bar"></span>
+                  </div>
+                </div>
+                
+                <div class="pricing-list-items row4">
+                  <div class="col1">
+                    <span class="inline-block pricing-duration">10/1</span>
+                    <span class="inline-block pricing-type">Adjustable</span>
+                  </div>
+                  <div class="col2">
+                    <p class="pricing-percentage"><span>4.750%</span> / 4.875%</p>
+                  </div>
+                  <div class="col3">
+                    <span class="pricing-points">-$154</span><span class="inline-block pricing-points-bar"></span>
+                  </div>
+                  <div class="col4">
+                    <span class="pricing-pre-month">$2,072</span><span class="inline-block pricing-pre-month-bar"></span>
+                  </div>
+                </div>
+                
+                <div class="pricing-list-items row5">
+                  <div class="col1">
+                    <span class="inline-block pricing-duration">7/1</span>
+                    <span class="inline-block pricing-type">Adjustable</span>
+                  </div>
+                  <div class="col2">
+                    <p class="pricing-percentage"><span>4.750%</span> / 4.875%</p>
+                  </div>
+                  <div class="col3">
+                    <span class="pricing-points">-$154</span><span class="inline-block pricing-points-bar"></span>
+                  </div>
+                  <div class="col4">
+                    <span class="pricing-pre-month">$2,072</span><span class="inline-block pricing-pre-month-bar"></span>
+                  </div>
+                </div>
+                
+                <div class="pricing-list-items row6">
+                  <div class="col1">
+                    <span class="inline-block pricing-duration">5/1</span>
+                    <span class="inline-block pricing-type">Adjustable</span>
+                  </div>
+                  <div class="col2">
+                    <p class="pricing-percentage"><span>4.750%</span> / 4.875%</p>
+                  </div>
+                  <div class="col3">
+                    <span class="pricing-points">-$154</span><span class="inline-block pricing-points-bar"></span>
+                  </div>
+                  <div class="col4">
+                    <span class="pricing-pre-month">$2,072</span><span class="inline-block pricing-pre-month-bar"></span>
+                  </div>
+                </div>
+                
+              </div>
+
+              <div class="pricing-input">
+                <div class="pricing-input__container">
+                  <div class="pricing-input__fixed">
+                    <div>
+                      <input hidden type="checkbox" name="pricing-type" id="fixed" checked>
+                      <label for="fixed" class="checkmark secondary-checkbox"></label>
+                      <label for="fixed" class="inline-block pricing-checkbox__text">Fixed</label>
+                    </div>
+
+                    <div>
+                      <input hidden type="checkbox" name="fixed-pricing-rang" id="fifteen-years" checked>
+                      <label for="fifteen-years" class="checkmark tertiary-checkbox"></label>
+                      <label for="fifteen-years" class="inline-block pricing-checkbox__text">15 Years</label>
+                    </div>
+
+                    <div>
+                      <input hidden type="checkbox" name="fixed-pricing-rang" id="twenty-years" checked>
+                      <label for="twenty-years" class="checkmark tertiary-checkbox"></label>
+                      <label for="twenty-years" class="inline-block pricing-checkbox__text">20 Years</label>
+                    </div>
+
+                    <div>
+                      <input hidden type="checkbox" name="fixed-pricing-rang" id="thirty-years" checked>
+                      <label for="thirty-years" class="checkmark tertiary-checkbox"></label>
+                      <label for="thirty-years" class="inline-block pricing-checkbox__text">30 Years</label>
+                    </div>
+                  </div>
+
+                  <div class="pricing-input__adjustable">
+                    <div>
+                      <input hidden type="checkbox" name="pricing-type" id="adjustable" checked>
+                      <label for="adjustable" class="checkmark secondary-checkbox"></label>
+                      <label for="adjustable" class="inline-block pricing-checkbox__text">Adjustable</label>
+                    </div>
+
+                    <div>
+                      <input hidden type="checkbox" name="pricing-type" id="ten-one" checked>
+                      <label for="ten-one" class="checkmark tertiary-checkbox"></label>
+                      <label for="ten-one" class="inline-block pricing-checkbox__text">10/1</label>
+                    </div>
+
+                    <div>
+                      <input hidden type="checkbox" name="pricing-type" id="seven-one" checked>
+                      <label for="seven-one" class="checkmark tertiary-checkbox"></label>
+                      <label for="seven-one" class="inline-block pricing-checkbox__text">7/1</label>
+                    </div>
+
+                    <div>
+                      <input hidden type="checkbox" name="pricing-type" id="five-one" checked>
+                      <label for="five-one" class="checkmark tertiary-checkbox"></label>
+                      <label for="five-one" class="inline-block pricing-checkbox__text">5/1</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="range-input-field">
+                  <p class="input-text">Max per month</p>
+                  <div class="input-range__holder inline-block">
+                    <span class="bar inline-block" id="per-mon-progress-bar"></span>
+                    <input class="input-range" type="range" min="0" max="100" value="50"  name="max-price" id="max-per-month">
+                  </div>
+                  <p class="inline-block input-range-value text-center" >$
+                    <span id="per-month-value"> 5,880</span></p>
+                </div>
+
+                <div class="range-input-field">
+                  <p class="input-text">Max points/credit</p>
+                  <div class="input-range__holder inline-block">
+                    <span class="bar inline-block" id="credit-progress-bar"></span>
+                    <input class="input-range" type="range" min="0" max="100" value="50"  name="max-price" id="max-credit">
+                  </div>
+                  <p class="inline-block input-range-value text-center" >$
+                    <span id="max-credit-value"> 5,880</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="pricing-btn__holder">
+              <div class="about-pricing">
+                <a class="inline-block about-pricing__holder" href="javascript:void(0)">
+                  <figure class="inline-block about-pricing__picture">
+                    <img src="dist/images/ques-icon.png" alt="qusestion-icon">
+                  </figure>
+                  <span class="about-pricing__desc">Rates and fees as of 12:06 PM</span>
+                </a>
+              </div>
+              <span class="inline-block primary-btn text-center" id="pricing-next">NEXT</span>
+            </div>
           </section>
 
 

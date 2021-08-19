@@ -148,3 +148,13 @@
   bottom: $bottom;
   left: $left;
 }
+
+@mixin pricing-bar($width: null, $bg-color: null) {
+  content: "";
+  display: inline-block;
+  background-color: $bg-color;
+  width: $width;
+  height: 4px;
+  border-radius: 3px;
+  @include position(absolute, $left: 0, $top: 0);
+}

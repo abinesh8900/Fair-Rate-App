@@ -135,3 +135,23 @@ function setSuccessFor(input) {
 browesFileBtn.addEventListener("click", () => {
   browesFileInput.click();
 });
+
+const rangeInputPerMonth = document.getElementById("max-per-month");
+const rangeInputPerMonthValue = document.getElementById("per-month-value");
+const perMonthBar = document.getElementById("per-mon-progress-bar");
+
+rangeInputPerMonth.oninput = function () {
+  rangeInputPerMonthValue.textContent = this.value * 120;
+  perMonthBar.style.width = this.value + "%";
+  // console.log(perMonthBar);
+};
+
+const rangeInputCredit = document.getElementById("max-credit");
+const rangeInputCreditValue = document.getElementById("max-credit-value");
+const creditBar = document.getElementById("credit-progress-bar");
+
+rangeInputCredit.oninput = function () {
+  rangeInputCreditValue.textContent = this.value * 120;
+  creditBar.style.width = this.value + "%";
+  console.log(creditBar.style.width);
+};

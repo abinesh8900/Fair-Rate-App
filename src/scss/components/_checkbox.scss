@@ -1,29 +1,64 @@
 .checkmark {
   display: inline-block;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--clr-lb-grey-primary);
   border-radius: 3px;
   @include position(relative);
   margin-block: 7px;
   vertical-align: middle;
-  transition: border 300ms;
+  transition: border 300ms, background-color 200ms;
+  cursor: pointer;
 
   &::after {
     content: "";
     width: 0;
     height: 0;
-    @include position(absolute, $top: 44%, $left: 48%);
+    // @include position(absolute, $top: 44%, $left: 48%);
     transform: translate(-50%, -50%) rotate(305deg);
     transition: height 300ms, 300ms width 300ms;
   }
 }
-
+.primary-checkbox {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--clr-lb-grey-primary);
+}
+.primary-checkbox.checkmark::after {
+  @include position(absolute, $top: 44%, $left: 48%);
+}
+//
+.secondary-checkbox {
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--clr-lb-grey-primary);
+}
+.secondary-checkbox.checkmark::after {
+  @include position(absolute, $top: 39%, $left: 50%);
+}
+//
+.tertiary-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--clr-lb-grey-primary);
+}
+.tertiary-checkbox.checkmark::after {
+  @include position(absolute, $top: 39%, $left: 50%);
+}
 .checkmark__animation {
   height: 9px;
   width: 14px;
   border-left: 2px solid var(--clr-blue-secondary);
   border-bottom: 2px solid var(--clr-blue-secondary);
+}
+.checkmark__animation-secondary {
+  height: 7px;
+  width: 12px;
+  border-left: 2px solid var(--clr-blue-secondary);
+  border-bottom: 2px solid var(--clr-blue-secondary);
+}
+.checkmark__animation-tertiary {
+  height: 5px;
+  width: 10px;
+  border-left: 2px solid var(--clr-white-primary);
+  border-bottom: 2px solid var(--clr-white-primary);
 }
 
 .checkmark__border {
