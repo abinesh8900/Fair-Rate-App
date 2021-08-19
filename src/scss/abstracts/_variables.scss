@@ -3,6 +3,7 @@ $colors: (
     primary: #adadad,
     tertiary: #8f9ea6,
     secondary: #dfe3e84d,
+    quaternary: #cbcbcb,
   ),
   grey: (
     primary: #919eab,
@@ -25,6 +26,9 @@ $colors: (
       tertiary: #ecedf0,
       quaternary: #f4f6f8,
     ),
+  o-white: (
+    primary: #ffffff40,
+  ),
   white: (
     primary: #ffffff,
     secondary: #f3f5f7,
@@ -40,14 +44,19 @@ $colors: (
     primary: #23c0f5,
     secondary: #4ad5f6,
   ),
+  l-blue: (
+    primary: #dbecf8,
+  ),
   g-blue: (
     primary: #47c1bf,
   ),
   red: (
     primary: #f75555,
+    secondary: #ed6347,
   ),
   green: (
     primary: #00cfc0,
+    secondary: #3cb865,
   ),
   iris: (
     primary: #5c6ac4,
@@ -57,5 +66,8 @@ $colors: (
   ),
   pink: (
     primary: #de6a93,
+  ),
+  o-black: (
+    primary: #00000024,
   ),
 );

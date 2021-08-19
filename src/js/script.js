@@ -155,3 +155,16 @@ rangeInputCredit.oninput = function () {
   creditBar.style.width = this.value + "%";
   console.log(creditBar.style.width);
 };
+
+const progressBar = document.getElementById("progress-value");
+let counter = 0;
+setInterval(countProgress, 50);
+
+function countProgress() {
+  if (counter !== 60) {
+    counter++;
+    progressBar.textContent = `${counter} %`;
+  } else {
+    clearInterval();
+  }
+}
