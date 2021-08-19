@@ -270,11 +270,10 @@
   padding-bottom: 140px;
 }
 .about-pricing {
-  &__holder {
-    padding-right: 50px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--clr-lb-grey-secondary);
-  }
+  padding-right: 50px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--clr-lb-grey-secondary);
+
   &__picture {
     vertical-align: middle;
   }
