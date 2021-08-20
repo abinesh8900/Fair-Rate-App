@@ -6,6 +6,7 @@ const terser = require("gulp-terser");
 const imagewebp = require("gulp-webp");
 const imagemin = require("gulp-imagemin");
 const browserSync = require("browser-sync").create();
+const concate = require("gulp-concat");
 
 //crearte functions
 
@@ -19,7 +20,10 @@ function compilescss() {
 
 // creat watchtask
 function jsmin() {
-  return src("src/js/*.js").pipe(terser()).pipe(dest("dist/js"));
+  return src("src/js/*.js")
+    .pipe(terser())
+    .pipe(concate("script.js"))
+    .pipe(dest("dist/js"));
 }
 
 //images

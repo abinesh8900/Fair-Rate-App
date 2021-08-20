@@ -1,6 +1,24 @@
 [
   {
-    "logo": "../images/loan-lock.png",
+    "logo": "dist/images/loan-lock.png",
+    "alt": "loan-lock",
+    "id": "NMLS ID: 7707",
+    "apr": "3.6% APR",
+    "date": "Mar 10",
+    "rate": "3.500% Rate",
+    "ratePoint": "1 Point",
+    "rateRateLock": "30 Rate Lock",
+    "payment": "$898.09",
+    "paymentFor": "/mo",
+    "paymentPoint": "1 Point",
+    "paymentRateLock": "30 Rate Lock",
+    "forCall": "(887) 407 - 37123",
+    "callNum": "+88740737123",
+    "forCallDesc": "Toll-free, no obligations"
+  },
+  {
+    "logo": "dist/images/merix.png",
+    "alt": "merix",
     "id": "NMLS ID: 7707",
     "apr": "3.6% APR",
     "date": "Mar 10",
@@ -15,7 +33,8 @@
     "forCallDesc": "Toll-free, no obligations"
   },
   {
-    "logo": "../images/merix.png",
+    "logo": "dist/images/cmls-financial.png",
+    "alt": "cmls-financial",
     "id": "NMLS ID: 7707",
     "apr": "3.6% APR",
     "date": "Mar 10",
@@ -30,7 +49,8 @@
     "forCallDesc": "Toll-free, no obligations"
   },
   {
-    "logo": "../images/cmls-financial.png",
+    "logo": "dist/images/b2b-bank.png",
+    "alt": "b2b-bank",
     "id": "NMLS ID: 7707",
     "apr": "3.6% APR",
     "date": "Mar 10",
@@ -45,7 +65,8 @@
     "forCallDesc": "Toll-free, no obligations"
   },
   {
-    "logo": "../images/b2b-bank.png",
+    "logo": "dist/images/rmg-mortgages.png",
+    "alt": "rmg-mortgages",
     "id": "NMLS ID: 7707",
     "apr": "3.6% APR",
     "date": "Mar 10",
@@ -60,7 +81,8 @@
     "forCallDesc": "Toll-free, no obligations"
   },
   {
-    "logo": "../images/rmg-mortgages.png",
+    "logo": "dist/images/equitable-bank.png",
+    "alt": "equitable-bank",
     "id": "NMLS ID: 7707",
     "apr": "3.6% APR",
     "date": "Mar 10",
@@ -75,7 +97,8 @@
     "forCallDesc": "Toll-free, no obligations"
   },
   {
-    "logo": "../images/equitable-bank.png",
+    "logo": "dist/images/wealthline.png",
+    "alt": "wealthline",
     "id": "NMLS ID: 7707",
     "apr": "3.6% APR",
     "date": "Mar 10",
@@ -90,22 +113,8 @@
     "forCallDesc": "Toll-free, no obligations"
   },
   {
-    "logo": "../images/wealthline.png",
-    "id": "NMLS ID: 7707",
-    "apr": "3.6% APR",
-    "date": "Mar 10",
-    "rate": "3.500% Rate",
-    "ratePoint": "1 Point",
-    "rateRateLock": "30 Rate Lock",
-    "payment": "$898.09",
-    "paymentFor": "/mo",
-    "paymentPoint": "1 Point",
-    "paymentRateLock": "30 Rate Lock",
-    "forCall": "(887) 407 - 37123",
-    "forCallDesc": "Toll-free, no obligations"
-  },
-  {
-    "logo": "../images/national-bank-of-canada.png",
+    "logo": "dist/images/national-bank-of-canada.png",
+    "alt": "national-bank-of-canada",
     "id": "NMLS ID: 7707",
     "apr": "3.6% APR",
     "date": "Mar 10",
