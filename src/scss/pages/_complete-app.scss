@@ -1,0 +1,40 @@
+.complete-app {
+  max-width: 945px;
+  height: 460px;
+
+  &__heading {
+    margin-bottom: 43px;
+  }
+}
+.complete-app__card-holder {
+  @include flex-container($justify-content: space-between);
+}
+.complete-app__solid-card {
+  @include flex-container();
+  background-color: var(--clr-white-primary);
+  border-radius: 5px;
+  box-shadow: 0 1px 18px 0 var(--clr-o-black-secondary),
+    0 6px 10px 0 var(--clr-o-black-tertiary);
+  max-width: 457px;
+  padding: 28px 20px;
+}
+.complete-app__dash-card {
+  border: 2px dashed var(--clr-lb-grey-secondary);
+  max-width: 457px;
+  padding: 28px 20px;
+}
+.complete-app__solid-card .card-content,
+.complete-app__dash-card .card-content {
+  &__heading {
+    font-size: 24px;
+    color: var(--clr-d-grey-primary);
+    margin-bottom: 6px;
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: var(--clr-grey-secondary);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+}

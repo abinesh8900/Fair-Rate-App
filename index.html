@@ -62,11 +62,12 @@
     </header>
 
     <main class="page-main">
-      <form method="GET" class="input__holder reduce">
+      <form method="GET" class="input__holder">
+        <!--add reduce class in input-holder at progress page is lode-->
         <!--  -->
         <!--  -->
         <!-- section-1 -->
-        <section class="username-field mx-auto text-center" id="username-field" style="display: none;">
+        <section class="username-field mx-auto text-center" id="username-field">
           <h2 class="input-area-heading username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
           <div class="username__intup-area">
 
@@ -91,7 +92,7 @@
         <!--  -->
         <!--  -->
         <!-- section-2 -->
-        <section class="user-info-field mx-auto " id="user-info-field" style="display: none;">
+        <section class="user-info-field mx-auto " id="user-info-field">
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
             <h2 class="user-info__heading input-area-heading">Fill the form <span>on the right</span></h2>
@@ -213,7 +214,7 @@
         
 
         <!-- section 3 -->
-        <section class="upload-page mx-auto" style="display: none;">
+        <section class="upload-page mx-auto">
           <h2 class="upload-page__heading input-area-heading text-center">Few more step ahead upload your ID Document 👆</h2>
           <div class="select-proof__holder">
             <span class="inline-block photo-proof__btn text-center selected">Photo Indentification</span>
@@ -284,7 +285,7 @@
         <!--  -->
         <!--  -->
         <!-- section 4 -->
-        <section class="result-page mx-auto" style="display: none;">
+        <section class="result-page mx-auto">
           <h2 class="result-page__heading input-area-heading text-center">Your fairest results</h2>
           <p class="result-page__caption text-center">16 Results for <span>30</span>  years xied in <span>64117</span> </p>
           <div class="select-area">
@@ -595,7 +596,7 @@
           <!--  -->
           <!--  -->
           <!--section 5-->
-          <section class="pricing mx-auto" style="display: none;">
+          <section class="pricing mx-auto">
             <h2 class="input-area-heading pricing__heading text-center">Your fairest results</h2>
             <div class="pricing-container">
               <div class="pricing-list-holder">
@@ -793,6 +794,9 @@
             </div>
           </section>
 
+          <!--  -->
+          <!--  -->
+          <!-- section 6 -->
           <section class="status-section">
             <div class="progress-area">
               <div class="progress-container mx-auto">
@@ -800,7 +804,7 @@
                   <div class="progress-status__circle inline-block">
                     <div class="outer-circle">
                       <div class="inner-circle">
-                        <span id="progress-value">0%</span>
+                        <span id="progress-value"  class="progress-value">0%</span>
                       </div>
                     </div>
                     <svg class="progress-bar" width="110px" height="110px">
@@ -812,9 +816,9 @@
                     <p class="progress-status__desc">Great Start Adrian! Please complete remaining steps!</p>
                   </div>
                 </div>
-                <a class="inline-block primary makecall-btn" href="javascript:void(0)">
-                  <span class="primary makecall-btn__text inline-block">Talk to us</span>
-                  <span class="primary makecall-btn__icon far fa-arrow-right"></span>
+                <a class="inline-block primary btn-with-icon" href="javascript:void(0)">
+                  <span class="primary btn-with-icon__text inline-block">Talk to us</span>
+                  <span class="primary btn-with-icon__icon far fa-arrow-right"></span>
                 </a>
               </div>
             </div>
@@ -845,10 +849,10 @@
                   <span class="status-items__num inline-block">3</span>
                   <p class="inline-block status-items__text">Adverse events</p>
                 </div>
-                <a class="inline-block secondary makecall-btn" href="javascript:void(0)">
-                  <span class="secondary makecall-btn__text inline-block">Get Started</span>
-                  <span class="secondary makecall-btn__icon far fa-arrow-right"></span>
-                </a>
+                <span class="inline-block secondary btn-with-icon" href="javascript:void(0)">
+                  <span class="secondary btn-with-icon__text inline-block">Get Started</span>
+                  <span class="secondary btn-with-icon__icon far fa-arrow-right"></span>
+                </span>
               </div>
               <div class="status-items disable">
                 <div class="inline-block">
@@ -859,6 +863,42 @@
             </div>
           </section>
 
+          <!--  -->
+          <!--  -->
+          <!-- section 7 -->
+          <section class="complete-app mx-auto">
+            <h2 class="input-area-heading complete-app__heading">Good morning Adrian</h2>
+            <div class="complete-app__card-holder">
+              <div class="complete-app__solid-card">
+                <div class="progress-status__circle inline-block">
+                  <div class="outer-circle">
+                    <div class="inner-circle">
+                      <span id="card-progress-value" class="progress-value">0%</span>
+                    </div>
+                  </div>
+                  <svg class="progress-bar" width="110px" height="110px">
+                    <circle cx="55" cy="55" r="50" stroke-linecap="round"></circle>
+                  </svg>
+                </div>
+                <div class="card-content">
+                  <h3 class="card-content__heading">My first home</h3>
+                  <p class="card-content__desc">Great start! You are so close to buying your dream house</p>
+                  <span class="inline-block secondary btn-with-icon" href="javascript:void(0)">
+                    <span class="secondary btn-with-icon__text inline-block">Complete Application</span>
+                    <span class="secondary btn-with-icon__icon far fa-arrow-right"></span>
+                  </span>
+                </div>
+              </div>
+              <div class="complete-app__dash-card">
+                <h3 class="card-content__heading">New application?</h3>
+                <p class="card-content__desc">Looking for buy or rent? Get started with an idae how much you can afford</p>
+                <span class="inline-block primary btn-with-icon" href="javascript:void(0)">
+                  <span class="primary btn-with-icon__text inline-block">Get Started</span>
+                  <span class="primary btn-with-icon__icon far fa-arrow-right"></span>
+                </span>
+              </div>
+            </div>
+          </section>
 
 
 

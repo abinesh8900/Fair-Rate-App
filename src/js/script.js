@@ -157,6 +157,7 @@ rangeInputCredit.oninput = function () {
 };
 
 const progressBar = document.getElementById("progress-value");
+const cardProgressBar = document.getElementById("card-progress-value");
 let counter = 0;
 setInterval(countProgress, 50);
 
@@ -164,6 +165,7 @@ function countProgress() {
   if (counter !== 60) {
     counter++;
     progressBar.textContent = `${counter} %`;
+    cardProgressBar.textContent = `${counter} %`;
   } else {
     clearInterval();
   }
