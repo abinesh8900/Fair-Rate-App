@@ -9,8 +9,9 @@
 .menu-btn {
   width: 24px;
   height: 24px;
-  line-height: 0;
-  position: absolute;
+  // line-height: 0;
+  cursor: pointer;
+  @include position(absolute);
   margin-right: 37px;
   top: calc(50% - 10px);
 

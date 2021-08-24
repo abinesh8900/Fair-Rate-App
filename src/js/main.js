@@ -40,81 +40,84 @@ const statusSectionNext = document.getElementById("status-section-next");
 // complete section
 const completeSection = document.getElementById("complete-app");
 
-const showFooter = function () {
+function showFooter() {
   footer.classList.remove("hidden");
-};
+}
+function hideFooter() {
+  footer.classList.add("hidden");
+}
+function add(elementToAdd) {
+  elementToAdd.classList.add("hidden");
+}
+function remove(elementToRemove) {
+  elementToRemove.classList.remove("hidden");
+}
 
 //***user name****//
 
 // next btn
 pageOneNext.addEventListener("click", () => {
-  userNameField.classList.add("hidden");
-  userInfoField.classList.remove("hidden");
-  footer.classList.add("hidden");
+  add(userNameField);
+  remove(userInfoField);
+  hideFooter();
 });
 
 //***user info****//
-
 // next btn
 userInfoNext.addEventListener("click", () => {
-  userInfoField.classList.add("hidden");
-  uploadeSection.classList.remove("hidden");
-  // console.log("clicled");
+  add(userInfoField);
+  remove(uploadeSection);
   showFooter();
 });
-
 //back btn
 userInfoBack.addEventListener("click", () => {
-  userNameField.classList.remove("hidden");
-  userInfoField.classList.add("hidden");
+  add(userInfoField);
+  remove(userNameField);
   showFooter();
 });
 
 // *** upload section ***//
-
 // next btn
 uploadeSectionNext.addEventListener("click", function () {
-  uploadeSection.classList.add("hidden");
-  resultSection.classList.remove("hidden");
+  add(uploadeSection);
+  remove(resultSection);
+  loadeLate();
 });
 //  back btn
 uploadeSectionBack.addEventListener("click", function () {
-  userInfoField.classList.remove("hidden");
-  uploadeSection.classList.add("hidden");
-  footer.classList.add("hidden");
-  console.log("clicked");
+  add(uploadeSection);
+  remove(userInfoField);
+  hideFooter();
 });
 // *** result section *** //
-
-setTimeout(print, 500);
-function print() {
+function loadeLate() {
   const resultSectionNextBtns = resultSection.querySelectorAll(
     ".result-section-next"
   );
   for (const resultSectionNextBtn of resultSectionNextBtns) {
     resultSectionNextBtn.addEventListener("click", function () {
-      resultSection.classList.add("hidden");
-      pricingSection.classList.remove("hidden");
+      add(resultSection);
+      remove(pricingSection);
     });
   }
 }
 
 //*** pricing section ***//
 pricingSectionNext.addEventListener("click", function () {
-  pricingSection.classList.add("hidden");
-  statusSection.classList.remove("hidden");
+  add(pricingSection);
+  remove(statusSection);
   progressload(progressBar);
   inputHolders.classList.add("reduce");
 });
 
 // *** status section *** //
 statusSectionNext.addEventListener("click", function () {
-  console.log(statusSectionNext);
-  statusSection.classList.add("hidden");
-  completeSection.classList.remove("hidden");
+  add(statusSection);
+  remove(completeSection);
   progressload(cardProgressBar);
   inputHolders.classList.remove("reduce");
 });
+
 //
 //
 //
@@ -136,7 +139,7 @@ optionItems.forEach((optionItem) => {
 
 //  uploade file
 let file;
-// let fileArray = [];
+let fileArray = [];
 browesFileBtn.addEventListener("click", () => {
   browesFileInput.click();
 });
@@ -155,77 +158,79 @@ dropArea.addEventListener("drop", (event) => {
 });
 function showFile() {
   // console.log(file);
-  // fileArray.push(file);
-  // console.log(fileArray);
-  // for (const listOfFile of fileArray) {
-  //   console.log(listOfFile.name);
+  fileArray.push(file);
+  file = "";
+  console.log(fileArray);
+  for (const listOfFile of fileArray) {
+    // console.log(listOfFile.name);
 
-  const fileType = file.name.substring(file.name.lastIndexOf(".") + 1);
-  if (!(fileType == "jpg" || fileType == "png" || fileType == "pdf")) {
-    alert("invalid file");
-  } else if (!(file.size < 5242880)) {
-    alert("file size is large");
-  } else {
-    console.log(file);
-    const uploadedItems = document.createElement("div");
-    uploadedItems.classList.add("uploaded-items");
-
-    const uploadedFile = document.createElement("div");
-    uploadedFile.classList.add("uploaded-file");
-
-    const uploadedFileFormat = document.createElement("div");
-    uploadedFileFormat.classList.add("uploaded-file__format-logo");
-
-    const fileTypeLogo = document.createElement("img");
-    fileTypeLogo.setAttribute("src", `dist/images/${fileType}-color.png`);
-
-    const uploadedFileName = document.createElement("span");
-    // uploadedFileName.classList.add("uploaded-file__name");
-    uploadedFileName.innerText = reduceFileChar(file.name);
-
-    const uploadedFileType = document.createElement("p");
-    uploadedFileType.classList.add("uploaded-file__format");
-    uploadedFileType.innerText = fileType;
-
-    const uploadedFileSize = document.createElement("p");
-    uploadedFileSize.classList.add("uploaded-file__size");
-    uploadedFileSize.innerText = byteToSize(file.size);
-
-    const uploadedFileStatus = document.createElement("p");
-    uploadedFileStatus.classList.add("uploaded-file__status");
-    uploadedFileStatus.innerText = "UPLOADED";
-
-    const uploadedFileDelete = document.createElement("span");
-    uploadedFileDelete.setAttribute("id", "delete-this-file");
-    uploadedFileDelete.classList.add("uploaded-file__delete", "inline-block");
-
-    const uploadedFileDeleteIcon = document.createElement("img");
-    uploadedFileDeleteIcon.setAttribute(
-      "src",
-      "dist/images/delete-outline.svg"
+    const fileType = listOfFile.name.substring(
+      listOfFile.name.lastIndexOf(".") + 1
     );
-    uploadeItemsArea.append(uploadedItems);
-    uploadedItems.append(uploadedFile);
-    uploadedFile.append(
-      uploadedFileFormat,
-      uploadedFileType,
-      uploadedFileSize,
-      uploadedFileStatus,
-      uploadedFileDelete
-    );
-    uploadedFileFormat.append(fileTypeLogo, uploadedFileName);
-    uploadedFileDelete.append(uploadedFileDeleteIcon);
+    if (!(fileType == "jpg" || fileType == "png" || fileType == "pdf")) {
+      alert("invalid file");
+    } else if (!(listOfFile.size < 5242880)) {
+      alert("file size is large");
+    } else {
+      console.log(listOfFile);
+      const uploadedItems = document.createElement("div");
+      uploadedItems.classList.add("uploaded-items");
 
-    const deleteUploadedFile = document.getElementById("delete-this-file");
-    deleteUploadedFile.addEventListener("click", function () {
-      uploadedItems.remove();
-      console.log("remove");
-    });
-    console.log("while uplode");
+      const uploadedFile = document.createElement("div");
+      uploadedFile.classList.add("uploaded-file");
+
+      const uploadedFileFormat = document.createElement("div");
+      uploadedFileFormat.classList.add("uploaded-file__format-logo");
+
+      const fileTypeLogo = document.createElement("img");
+      fileTypeLogo.setAttribute("src", `dist/images/${fileType}-color.png`);
+
+      const uploadedFileName = document.createElement("span");
+      // uploadedFileName.classList.add("uploaded-file__name");
+      uploadedFileName.innerText = reduceFileChar(listOfFile.name);
+
+      const uploadedFileType = document.createElement("p");
+      uploadedFileType.classList.add("uploaded-file__format");
+      uploadedFileType.innerText = fileType;
+
+      const uploadedFileSize = document.createElement("p");
+      uploadedFileSize.classList.add("uploaded-file__size");
+      uploadedFileSize.innerText = byteToSize(listOfFile.size);
+
+      const uploadedFileStatus = document.createElement("p");
+      uploadedFileStatus.classList.add("uploaded-file__status");
+      uploadedFileStatus.innerText = "UPLOADED";
+
+      const uploadedFileDelete = document.createElement("span");
+      uploadedFileDelete.setAttribute("id", "delete-this-file");
+      uploadedFileDelete.classList.add("uploaded-file__delete", "inline-block");
+
+      const uploadedFileDeleteIcon = document.createElement("img");
+      uploadedFileDeleteIcon.setAttribute(
+        "src",
+        "dist/images/delete-outline.svg"
+      );
+      uploadeItemsArea.append(uploadedItems);
+      uploadedItems.append(uploadedFile);
+      uploadedFile.append(
+        uploadedFileFormat,
+        uploadedFileType,
+        uploadedFileSize,
+        uploadedFileStatus,
+        uploadedFileDelete
+      );
+      uploadedFileFormat.append(fileTypeLogo, uploadedFileName);
+      uploadedFileDelete.append(uploadedFileDeleteIcon);
+
+      const deleteUploadedFile = document.getElementById("delete-this-file");
+      deleteUploadedFile.addEventListener("click", function () {
+        uploadedItems.remove();
+        // console.log("remove");
+      });
+      // console.log("while uplode");
+    }
   }
 }
-
-// }
 function reduceFileChar(char) {
   if (char.length >= 10) {
     let splitName = char.split(".");
@@ -257,19 +262,6 @@ rangeInputCredit.oninput = function () {
 };
 
 //*** status section ***//
-
-//  progress number count
-// let counter = 0;
-// setInterval(countProgress, 50);
-// function countProgress() {
-//   if (counter !== 60) {
-//     counter++;
-//     progressBar.textContent = `${counter} %`;
-//     cardProgressBar.textContent = `${counter} %`;
-//   } else {
-//     clearInterval();
-//   }
-// }
 function progressload(whichSection) {
   let counter = 0;
   setInterval(countProgress, 50);
