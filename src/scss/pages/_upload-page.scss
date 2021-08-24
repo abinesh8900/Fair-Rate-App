@@ -24,7 +24,7 @@
   color: var(--clr-white-primary);
   background-color: var(--clr-grey-secondary);
 }
-.upload-container {
+.upload-area-container {
   background-color: var(--clr-white-primary);
   padding-bottom: 20px;
   box-shadow: 0px 0px 11px -5px var(--clr-grey-primary);
@@ -105,9 +105,15 @@
     @include position(absolute, $bottom: 0, $left: 0);
   }
 }
-.upload-container__footer {
-  border-block: 1px solid var(--clr-lb-grey-secondary);
+.uploaded-items-container {
+  border-bottom: 1px solid var(--clr-lb-grey-secondary);
+}
+.uploaded-items {
+  border-top: 1px solid var(--clr-lb-grey-secondary);
   background-color: var(--clr-white-senary);
+}
+.uploaded-items.active {
+  display: block;
 }
 .uploaded-file {
   @include flex-container(
@@ -123,6 +129,10 @@
   }
   &__delete {
     cursor: pointer;
+  }
+  &__format,
+  &__status {
+    text-transform: uppercase;
   }
 }
 .uploade-page__btn-holder {

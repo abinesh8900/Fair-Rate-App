@@ -3,7 +3,6 @@ fetch("./dist/result.json")
     return response.json();
   })
   .then(function (results) {
-    console.log(results);
     document.getElementById("result-area").innerHTML = `${results
       .map(function (result) {
         return `

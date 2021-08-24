@@ -240,3 +240,24 @@
 #fire-alarm:checked + .checkmark {
   @extend .checkmark__border;
 }
+// .date-picker {
+//   & .selected-date {
+//     height: 46px;
+//     font-size: 16px;
+//     line-height: 2.6;
+//     color: var(--clr-d-grey-primary);
+//     @include position(relative);
+//   }
+//   & .dates {
+//     @include position(absolute, $top: 65px, $right: 0);
+//     width: 322px;
+//     height: 280px;
+//     border-radius: 2px;
+//     box-shadow: 0 2px 16px 0 var(--clr-o-black-quaternary),
+//       0 0 0 1px var(--clr-o-black-quinary);
+//     padding: 25px 9px 13px;
+//   }
+//   & .month-year {
+//     @include flex-container($justify-content: space-between);
+//   }
+// }

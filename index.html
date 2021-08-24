@@ -68,7 +68,7 @@
         <!--  -->
         <!--  -->
         <!-- section-1 -->
-        <section class="username-field mx-auto text-center" id="username-field">
+        <div class="username-field mx-auto text-center" id="username-field">
           <h2 class="input-area-heading username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
           <div class="username__intup-area">
 
@@ -88,12 +88,12 @@
 
           </div>
           <span class="primary-btn inline-block disable" id="pg-one-next">NEXT</span>
-        </section>
+        </div>
 
         <!--  -->
         <!--  -->
         <!-- section-2 -->
-        <section class="user-info-field mx-auto " id="user-info-field">
+        <div class="user-info-field mx-auto " id="user-info-field">
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
             <h2 class="user-info__heading input-area-heading">Fill the form <span>on the right</span></h2>
@@ -105,6 +105,25 @@
             <div class="input-field__dob input-field">
               <input type="date" name="date-of-birth" id="date-of-birth">
             </div>
+
+            <!-- <div class="date-picker input-field"  id="date-picker">
+              <div class="selected-date"></div>
+
+              <div class="dates" >
+                <div class="month-year">
+                  <span class="arrow perv-mth fas fa-arrow-left inline-block" id="perv-mth"></span>
+                  <div>
+                    <span class="month initial-block"></span>
+                    <span class="year initial-block"></span>
+                  </div>
+                  <span class="arrow next-mnt fas fa-arrow-right inline-block"></span>
+                </div>
+
+                <div class="days">
+                  
+                </div>
+              </div>
+            </div> -->
           </div>
 
           <div class="user-info-field__right">
@@ -211,25 +230,26 @@
               <span class="inline-block primary-btn text-center" id="user-info-next">NEXT</span>
             </div>
           </div>
-        </section>
+        </div>
         
 
         <!-- section 3 -->
-        <section class="upload-page mx-auto">
+        <div class="upload-page mx-auto">
           <h2 class="upload-page__heading input-area-heading text-center">Few more step ahead upload your ID Document 👆</h2>
           <div class="select-proof__holder">
             <span class="inline-block photo-proof__btn text-center selected">Photo Indentification</span>
             <span class="inline-block address-proof__btn text-center">Proof of Address</span>
           </div>
-          <div class="upload-container">
-            <p class="upload-container__head text-center">Upload photo Indentification</p>
-            <div class="upload-container__body">
-              <div class="upload-area text-center">
+          <div class="upload-area-container">
+            <p class="upload-area-container__head text-center">Upload photo Indentification</p>
+            <div class="upload-area-container__body">
+              <div class="upload-area text-center" id="drop-area">
                 <figure class="upload-area__picture">
                   <img src="dist/images/upload-icon.png" alt="upload Document">
                 </figure>
                 <p class="upload-area__desc mx-auto">Drag files here to upload or 
-                 <span class="upload-area__desc--browes-btn" id="browes-btn"> select a file</span> <input type="file" name="Documents" id="photo-proof" hidden> from your device</p>
+                 <span class="upload-area__desc--browes-btn" id="browes-btn"> select a file</span>
+                 <input type="file" name="Documents" id="photo-proof" hidden> from your device</p>
                 <p class="upload-area__caption">JPG, PNG or PDF only, maximum file size - 5MB</p>
               </div>
               <div class="upload-items">
@@ -248,45 +268,46 @@
                 <span class="upload-items__sample">See an example image</span>
               </div>
             </div>
-            
-            <div class="upload-container__footer">
-              <div class="uploaded-file">
-                <div class="uploaded-file__format-logo inline-block">
-                  <img src="dist/images/pdf-color.png" alt="pdf">
-                  <span class="uploaded-file__name">MY_ID.pdf</span>
+            <div class="uploaded-items-container" id="uploaded-items-area">
+              <!-- <div class="uploaded-items" id="uploaded-items">
+                <div class="uploaded-file">
+                  <div class="uploaded-file__format-logo inline-block">
+                    <img src="dist/images/pdf-color.png" alt="pdf">
+                    <span class="uploaded-file__name">MY_ID.pdf</span>
+                  </div>
+                  <p class="uploaded-file__format inline-block">pdf</p>
+                  <p class="uploaded-file__size inline-block">1MB</p>
+                  <p class="uploaded-file__status">UPLOADED</p>
+                  <span class="uploaded-file__delete  inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                      <defs>
+                          <path id="a" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4h-3.5z"/>
+                      </defs>
+                      <g fill="none" fill-rule="evenodd">
+                          <mask id="b" fill="#fff">
+                              <use xlink:href="#a"/>
+                          </mask>
+                          <g fill="#000" mask="url(#b)">
+                              <path d="M0 0h24v24H0z"/>
+                          </g>
+                      </g>
+                  </svg>
+                  </span>
                 </div>
-                <p class="uploaded-file__format inline-block">pdf</p>
-                <p class="uploaded-file__size inline-block">1MB</p>
-                <p class="uploaded-file__status">UPLOADED</p>
-                <span class="uploaded-file__delete  inline-block">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-                    <defs>
-                        <path id="a" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4h-3.5z"/>
-                    </defs>
-                    <g fill="none" fill-rule="evenodd">
-                        <mask id="b" fill="#fff">
-                            <use xlink:href="#a"/>
-                        </mask>
-                        <g fill="#000" mask="url(#b)">
-                            <path d="M0 0h24v24H0z"/>
-                        </g>
-                    </g>
-                </svg>
-                </span>
-              </div>
-            </div>
+              </div> -->
+             </div>
             </div>
             <div class="uploade-page__btn-holder">
               <span class="inline-block secondary-btn text-center" id="upload-page-back">BACK</span>
               <span class="inline-block primary-btn text-center" id="uplode-page-next">NEXT</span>
             </div>
-        </section>
+        </div>
 
 
         <!--  -->
         <!--  -->
         <!-- section 4 -->
-        <section class="result-page mx-auto">
+        <div class="result-page mx-auto">
           <h2 class="result-page__heading input-area-heading text-center">Your fairest results</h2>
           <p class="result-page__caption text-center">16 Results for <span>30</span>  years xied in <span>64117</span> </p>
           <div class="select-area">
@@ -345,12 +366,12 @@
 
              </div>
            </div>
-          </section>
+          </div>
 
           <!--  -->
           <!--  -->
           <!--section 5-->
-          <section class="pricing mx-auto">
+          <div class="pricing mx-auto">
             <h2 class="input-area-heading pricing__heading text-center">Your fairest results</h2>
             <div class="pricing-container">
               <div class="pricing-list-holder">
@@ -546,12 +567,12 @@
               </div>
               <span class="inline-block primary-btn text-center" id="pricing-next">NEXT</span>
             </div>
-          </section>
+          </div>
 
           <!--  -->
           <!--  -->
           <!-- section 6 -->
-          <section class="status-section">
+          <div class="status-section">
             <div class="progress-area">
               <div class="progress-container mx-auto">
                 <div class="progress-status">
@@ -615,12 +636,12 @@
                 </div>
               </div>
             </div>
-          </section>
+          </div>
 
           <!--  -->
           <!--  -->
           <!-- section 7 -->
-          <section class="complete-app mx-auto">
+          <div class="complete-app mx-auto">
             <h2 class="input-area-heading complete-app__heading">Good morning Adrian</h2>
             <div class="complete-app__card-holder">
               <div class="complete-app__solid-card">
@@ -652,7 +673,7 @@
                 </span>
               </div>
             </div>
-          </section>
+          </div>
       </form>
     </main>
     <footer class="footer" id="footer">
@@ -750,6 +771,6 @@
         </p>
       </div>
     </footer>
-    <script src="dist/js/script.js"></script>
   </body>
+  <script type="module" src="dist/js/script.js"></script>
 </html>
