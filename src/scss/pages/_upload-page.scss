@@ -116,23 +116,31 @@
   display: block;
 }
 .uploaded-file {
-  @include flex-container(
-    $justify-content: space-between,
-    $align-items: center
-  );
+  @include flex-container($align-items: center);
   padding: 15px 20px;
   font-size: 11px;
   color: var(--clr-grey-secondary);
 
   &__format-logo > img {
+    margin-right: 5px;
     vertical-align: middle;
   }
   &__delete {
     cursor: pointer;
+    text-align: right;
   }
   &__format,
   &__status {
     text-transform: uppercase;
+  }
+  &__format-logo {
+    @include flex-items($flex-basis: 150px);
+  }
+  &__format,
+  &__delete,
+  &__status,
+  &__size {
+    @include flex-items($flex-basis: 120px);
   }
 }
 .uploade-page__btn-holder {

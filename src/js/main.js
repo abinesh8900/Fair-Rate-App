@@ -69,7 +69,7 @@ optionItems.forEach((optionItem) => {
 
 //  uploade file
 let file;
-let fileArray = [];
+// let fileArray = [];
 browesFileBtn.addEventListener("click", () => {
   browesFileInput.click();
 });
@@ -87,67 +87,88 @@ dropArea.addEventListener("drop", (event) => {
   showFile();
 });
 function showFile() {
-  fileArray.push(file);
-  console.log(fileArray);
-  for (const listOfFile of fileArray) {
-    console.log(listOfFile.name);
+  console.log(file);
+  // fileArray.push(file);
+  // console.log(fileArray);
+  // for (const listOfFile of fileArray) {
+  //   console.log(listOfFile.name);
 
-    function byteToSize(byte) {
-      const size = ["Bytes", "KB", "MB"];
-      if (byte == 0) return "0 Bytes";
-      const i = parseInt(Math.floor(Math.log(byte) / Math.log(1024)));
-      const sizeOfFile =
-        Math.round(byte / Math.pow(1024, i), 2) + " " + size[i];
-      return sizeOfFile;
-    }
-    const fileType = listOfFile.name.substring(
-      listOfFile.name.lastIndexOf(".") + 1
+  const fileType = file.name.substring(file.name.lastIndexOf(".") + 1);
+  if (!(fileType == "jpg" || fileType == "png" || fileType == "pdf")) {
+    alert("invalid file");
+  } else if (!(file.size < 5242880)) {
+    alert("file size is large");
+  } else {
+    const uploadedItems = document.createElement("div");
+    uploadedItems.classList.add("uploaded-items");
+
+    const uploadedFile = document.createElement("div");
+    uploadedFile.classList.add("uploaded-file");
+
+    const uploadedFileFormat = document.createElement("div");
+    uploadedFileFormat.classList.add("uploaded-file__format-logo");
+
+    const fileTypeLogo = document.createElement("img");
+    fileTypeLogo.setAttribute("src", `dist/images/${fileType}-color.png`);
+
+    const uploadedFileName = document.createElement("span");
+    // uploadedFileName.classList.add("uploaded-file__name");
+    uploadedFileName.innerText = reduceFileChar(file.name);
+
+    const uploadedFileType = document.createElement("p");
+    uploadedFileType.classList.add("uploaded-file__format");
+    uploadedFileType.innerText = fileType;
+
+    const uploadedFileSize = document.createElement("p");
+    uploadedFileSize.classList.add("uploaded-file__size");
+    uploadedFileSize.innerText = byteToSize(file.size);
+
+    const uploadedFileStatus = document.createElement("p");
+    uploadedFileStatus.classList.add("uploaded-file__status");
+    uploadedFileStatus.innerText = "UPLOADED";
+
+    const uploadedFileDelete = document.createElement("span");
+    uploadedFileDelete.setAttribute("id", "delect-this-file");
+    uploadedFileDelete.classList.add("uploaded-file__delete", "inline-block");
+
+    const uploadedFileDeleteIcon = document.createElement("img");
+    uploadedFileDeleteIcon.setAttribute(
+      "src",
+      "dist/images/delete-outline.svg"
     );
-    if (!(fileType == "jpg" || fileType == "png" || fileType == "pdf")) {
-      alert("invalid file");
-    } else if (!(listOfFile.size < 5242880)) {
-      alert("file size is large");
-    } else {
-      uploadeItemsArea.innerHTML = `
+    uploadeItemsArea.append(uploadedItems);
+    uploadedItems.append(uploadedFile);
+    uploadedFile.append(
+      uploadedFileFormat,
+      uploadedFileType,
+      uploadedFileSize,
+      uploadedFileStatus,
+      uploadedFileDelete
+    );
+    uploadedFileFormat.append(fileTypeLogo, uploadedFileName);
+    uploadedFileDelete.append(uploadedFileDeleteIcon);
 
-                  <div class="uploaded-items" id="uploaded-items">
-                  <div class="uploaded-file">
-                    <div class="uploaded-file__format-logo inline-block">
-                    <img src="dist/images/${fileType}-color.png" alt="formate">
-                      <span class="uploaded-file__name">${
-                        listOfFile.name
-                      }</span>
-                    </div>
-                    <p class="uploaded-file__format inline-block">${fileType}</p>
-                    <p class="uploaded-file__size inline-block">${byteToSize(
-                      listOfFile.size
-                    )}</p>
-                    <p class="uploaded-file__status">UPLOADED</p>
-                    <span class="uploaded-file__delete  inline-block" id="uploaded-file-delete">
-                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
-                        <defs>
-                            <path id="a" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM8 9h8v10H8V9zm7.5-5l-1-1h-5l-1 1H5v2h14V4h-3.5z"/>
-                        </defs>
-                        <g fill="none" fill-rule="evenodd">
-                            <mask id="b" fill="#fff">
-                                <use xlink:href="#a"/>
-                            </mask>
-                            <g fill="#000" mask="url(#b)">
-                                <path d="M0 0h24v24H0z"/>
-                            </g>
-                        </g>
-                    </svg>
-                    </span>
-                  </div>
-                </div>
-    `;
-      const delectFile = document.getElementById("uploaded-file-delete");
-      // console.log(delectFile);
-      delectFile.addEventListener("click", function () {
-        // console.log("delect");
-      });
-    }
+    const delectUploadedFile = document.getElementById("delect-this-file");
+    delectUploadedFile.addEventListener("click", function () {
+      uploadeItems.remove();
+    });
   }
+}
+// }
+function reduceFileChar(char) {
+  if (char.length >= 10) {
+    let splitName = char.split(".");
+    char = splitName[0].substring(0, 10) + "... ." + splitName[1];
+    return char;
+  } else {
+    return char;
+  }
+}
+function byteToSize(byte) {
+  const size = ["Bytes", "KB", "MB"];
+  if (byte == 0) return "0 Bytes";
+  const i = parseInt(Math.floor(Math.log(byte) / Math.log(1024)));
+  return Math.round(byte / Math.pow(1024, i), 2) + " " + size[i];
 }
 
 //*** pricing section ***//
