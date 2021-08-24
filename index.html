@@ -61,8 +61,7 @@
       </div>
     </header>
 
-    <main class="page-main">
-      <form method="GET" class="input__holder">
+    <main class="page-main" id="input-field">
         <!--add reduce class in input-holder at progress page is lode-->
         
         <!--  -->
@@ -87,13 +86,13 @@
             </div>
 
           </div>
-          <span class="primary-btn inline-block disable" id="pg-one-next">NEXT</span>
+          <a href="#" class="primary-btn inline-block " id="pg-one-next">NEXT</a>
         </div>
 
         <!--  -->
         <!--  -->
         <!-- section-2 -->
-        <div class="user-info-field mx-auto " id="user-info-field">
+        <div class="user-info-field mx-auto hidden" id="user-info-field">
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
             <h2 class="user-info__heading input-area-heading">Fill the form <span>on the right</span></h2>
@@ -226,15 +225,15 @@
             </div>
 
             <div class="user-info__btn-holder">
-              <span class="inline-block secondary-btn text-center" id="user-info-back">BACK</span>
-              <span class="inline-block primary-btn text-center" id="user-info-next">NEXT</span>
+              <a href="#" class="inline-block secondary-btn text-center" id="user-info-back">BACK</a>
+              <a href="#" class="inline-block primary-btn text-center" id="user-info-next">NEXT</a>
             </div>
           </div>
         </div>
         
 
         <!-- section 3 -->
-        <div class="upload-page mx-auto">
+        <div class="upload-page mx-auto hidden" id ="upload-section">
           <h2 class="upload-page__heading input-area-heading text-center">Few more step ahead upload your ID Document 👆</h2>
           <div class="select-proof__holder">
             <span class="inline-block photo-proof__btn text-center selected">Photo Indentification</span>
@@ -269,25 +268,11 @@
               </div>
             </div>
             <div class="uploaded-items-container" id="uploaded-items-area">
-              <!-- <div class="uploaded-items" id="uploaded-items">
-                <div class="uploaded-file">
-                  <div class="uploaded-file__format-logo inline-block">
-                    <img src="dist/images/pdf-color.png" alt="pdf">
-                    <span class="uploaded-file__name">MY_ID.pdf</span>
-                  </div>
-                  <p class="uploaded-file__format inline-block">pdf</p>
-                  <p class="uploaded-file__size inline-block">1MB</p>
-                  <p class="uploaded-file__status">UPLOADED</p>
-                  <span class="uploaded-file__delete  inline-block">
-                    <img src="dist/images/delete-outline.svg" alt="">
-                  </span>
-                </div>
-              </div> -->
-             </div>
             </div>
+          </div>
             <div class="uploade-page__btn-holder">
-              <span class="inline-block secondary-btn text-center" id="upload-page-back">BACK</span>
-              <span class="inline-block primary-btn text-center" id="uplode-page-next">NEXT</span>
+              <a href="#" class="inline-block secondary-btn text-center" id="upload-section-back">BACK</a>
+              <a href="#" class="inline-block primary-btn text-center" id="uplode-section-next">NEXT</a>
             </div>
         </div>
 
@@ -295,7 +280,7 @@
         <!--  -->
         <!--  -->
         <!-- section 4 -->
-        <div class="result-page mx-auto">
+        <div class="result-page mx-auto hidden" id="result-section">
           <h2 class="result-page__heading input-area-heading text-center">Your fairest results</h2>
           <p class="result-page__caption text-center">16 Results for <span>30</span>  years xied in <span>64117</span> </p>
           <div class="select-area">
@@ -359,7 +344,7 @@
           <!--  -->
           <!--  -->
           <!--section 5-->
-          <div class="pricing mx-auto">
+          <div class="pricing mx-auto hidden" id="pricing-section">
             <h2 class="input-area-heading pricing__heading text-center">Your fairest results</h2>
             <div class="pricing-container">
               <div class="pricing-list-holder">
@@ -553,14 +538,14 @@
                   <span class="about-pricing__desc">Rates and fees as of 12:06 PM</span>
                 </a>
               </div>
-              <span class="inline-block primary-btn text-center" id="pricing-next">NEXT</span>
+              <a href="#" class="inline-block primary-btn text-center" id="pricing-next">NEXT</a>
             </div>
           </div>
 
           <!--  -->
           <!--  -->
           <!-- section 6 -->
-          <div class="status-section">
+          <div class="status-section hidden" id="status-section">
             <div class="progress-area">
               <div class="progress-container mx-auto">
                 <div class="progress-status">
@@ -612,10 +597,10 @@
                   <span class="status-items__num inline-block">3</span>
                   <p class="inline-block status-items__text">Adverse events</p>
                 </div>
-                <span class="inline-block secondary btn-with-icon" href="javascript:void(0)">
+                <a href="#" class="inline-block secondary btn-with-icon"  id="status-section-next">
                   <span class="secondary btn-with-icon__text inline-block">Get Started</span>
                   <span class="secondary btn-with-icon__icon far fa-arrow-right"></span>
-                </span>
+                </a>
               </div>
               <div class="status-items disable">
                 <div class="inline-block">
@@ -629,7 +614,7 @@
           <!--  -->
           <!--  -->
           <!-- section 7 -->
-          <div class="complete-app mx-auto">
+          <div class="complete-app mx-auto hidden" id="complete-app">
             <h2 class="input-area-heading complete-app__heading">Good morning Adrian</h2>
             <div class="complete-app__card-holder">
               <div class="complete-app__solid-card">
@@ -646,23 +631,22 @@
                 <div class="card-content">
                   <h3 class="card-content__heading">My first home</h3>
                   <p class="card-content__desc">Great start! You are so close to buying your dream house</p>
-                  <span class="inline-block secondary btn-with-icon" href="javascript:void(0)">
+                  <a class="inline-block secondary btn-with-icon" href="javascript:void(0)">
                     <span class="secondary btn-with-icon__text inline-block">Complete Application</span>
                     <span class="secondary btn-with-icon__icon far fa-arrow-right"></span>
-                  </span>
+                  </a>
                 </div>
               </div>
               <div class="complete-app__dash-card">
                 <h3 class="card-content__heading">New application?</h3>
                 <p class="card-content__desc">Looking for buy or rent? Get started with an idae how much you can afford</p>
-                <span class="inline-block primary btn-with-icon" href="javascript:void(0)">
+                <a class="inline-block primary btn-with-icon" href="javascript:void(0)">
                   <span class="primary btn-with-icon__text inline-block">Get Started</span>
                   <span class="primary btn-with-icon__icon far fa-arrow-right"></span>
-                </span>
+                </a>
               </div>
             </div>
           </div>
-      </form>
     </main>
     <footer class="footer" id="footer">
       <div class="container mx-auto">

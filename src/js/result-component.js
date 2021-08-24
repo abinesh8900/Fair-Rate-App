@@ -33,7 +33,7 @@ fetch("./dist/result.json")
                   <p class="result-body-items__caption">${result.forCallDesc}</p>
                 </div>
                 <div class="result-body-items__apply-btn">
-                  <span class="inline-block text-center float-r">NEXT</span>
+                  <a href="#" class="inline-block text-center float-r result-section-next" id="result-section-next">NEXT</a>
                 </div>
                </div>
         `;

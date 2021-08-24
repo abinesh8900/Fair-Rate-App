@@ -1,3 +1,4 @@
+const inputHolders = document.getElementById("input-field");
 const footer = document.getElementById("footer");
 // username section
 const pageOneNext = document.getElementById("pg-one-next");
@@ -10,12 +11,19 @@ const inputSelect = document.getElementById("input-field-select");
 const optionContainer = document.getElementById("show-select-option");
 const optionItems = optionContainer.querySelectorAll(".option-item");
 // uplode section
+const uploadeSection = document.getElementById("upload-section");
 const browesFileBtn = document.getElementById("browes-btn");
 const browesFileInput = document.getElementById("photo-proof");
 const dropArea = document.getElementById("drop-area");
 const uploadeItemsArea = document.getElementById("uploaded-items-area");
+const uploadeSectionNext = document.getElementById("uplode-section-next");
+const uploadeSectionBack = document.getElementById("upload-section-back");
+// result section
+const resultSection = document.getElementById("result-section");
 
 //pricing section
+const pricingSection = document.getElementById("pricing-section");
+const pricingSectionNext = document.getElementById("pricing-next");
 const rangeInputPerMonth = document.getElementById("max-per-month");
 const rangeInputPerMonthValue = document.getElementById("per-month-value");
 const perMonthBar = document.getElementById("per-mon-progress-bar");
@@ -24,8 +32,13 @@ const rangeInputCreditValue = document.getElementById("max-credit-value");
 const creditBar = document.getElementById("credit-progress-bar");
 
 // status section
+const statusSection = document.getElementById("status-section");
 const progressBar = document.getElementById("progress-value");
 const cardProgressBar = document.getElementById("card-progress-value");
+const statusSectionNext = document.getElementById("status-section-next");
+
+// complete section
+const completeSection = document.getElementById("complete-app");
 
 const showFooter = function () {
   footer.classList.remove("hidden");
@@ -42,21 +55,75 @@ pageOneNext.addEventListener("click", () => {
 
 //***user info****//
 
-// show footer
+// next btn
 userInfoNext.addEventListener("click", () => {
+  userInfoField.classList.add("hidden");
+  uploadeSection.classList.remove("hidden");
+  // console.log("clicled");
   showFooter();
 });
-// next btn
-inputSelect.addEventListener("click", () => {
-  optionContainer.classList.toggle("active");
-});
+
 //back btn
 userInfoBack.addEventListener("click", () => {
   userNameField.classList.remove("hidden");
   userInfoField.classList.add("hidden");
   showFooter();
 });
+
+// *** upload section ***//
+
+// next btn
+uploadeSectionNext.addEventListener("click", function () {
+  uploadeSection.classList.add("hidden");
+  resultSection.classList.remove("hidden");
+});
+//  back btn
+uploadeSectionBack.addEventListener("click", function () {
+  userInfoField.classList.remove("hidden");
+  uploadeSection.classList.add("hidden");
+  footer.classList.add("hidden");
+  console.log("clicked");
+});
+// *** result section *** //
+
+setTimeout(print, 500);
+function print() {
+  const resultSectionNextBtns = resultSection.querySelectorAll(
+    ".result-section-next"
+  );
+  for (const resultSectionNextBtn of resultSectionNextBtns) {
+    resultSectionNextBtn.addEventListener("click", function () {
+      resultSection.classList.add("hidden");
+      pricingSection.classList.remove("hidden");
+    });
+  }
+}
+
+//*** pricing section ***//
+pricingSectionNext.addEventListener("click", function () {
+  pricingSection.classList.add("hidden");
+  statusSection.classList.remove("hidden");
+  progressload(progressBar);
+  inputHolders.classList.add("reduce");
+});
+
+// *** status section *** //
+statusSectionNext.addEventListener("click", function () {
+  console.log(statusSectionNext);
+  statusSection.classList.add("hidden");
+  completeSection.classList.remove("hidden");
+  progressload(cardProgressBar);
+  inputHolders.classList.remove("reduce");
+});
+//
+//
+//
+//
 // input select
+inputSelect.addEventListener("click", () => {
+  optionContainer.classList.toggle("active");
+});
+
 optionItems.forEach((optionItem) => {
   optionItem.addEventListener("click", () => {
     inputSelect.querySelector("p").textContent =
@@ -87,7 +154,7 @@ dropArea.addEventListener("drop", (event) => {
   showFile();
 });
 function showFile() {
-  console.log(file);
+  // console.log(file);
   // fileArray.push(file);
   // console.log(fileArray);
   // for (const listOfFile of fileArray) {
@@ -99,6 +166,7 @@ function showFile() {
   } else if (!(file.size < 5242880)) {
     alert("file size is large");
   } else {
+    console.log(file);
     const uploadedItems = document.createElement("div");
     uploadedItems.classList.add("uploaded-items");
 
@@ -128,7 +196,7 @@ function showFile() {
     uploadedFileStatus.innerText = "UPLOADED";
 
     const uploadedFileDelete = document.createElement("span");
-    uploadedFileDelete.setAttribute("id", "delect-this-file");
+    uploadedFileDelete.setAttribute("id", "delete-this-file");
     uploadedFileDelete.classList.add("uploaded-file__delete", "inline-block");
 
     const uploadedFileDeleteIcon = document.createElement("img");
@@ -148,12 +216,15 @@ function showFile() {
     uploadedFileFormat.append(fileTypeLogo, uploadedFileName);
     uploadedFileDelete.append(uploadedFileDeleteIcon);
 
-    const delectUploadedFile = document.getElementById("delect-this-file");
-    delectUploadedFile.addEventListener("click", function () {
-      uploadeItems.remove();
+    const deleteUploadedFile = document.getElementById("delete-this-file");
+    deleteUploadedFile.addEventListener("click", function () {
+      uploadedItems.remove();
+      console.log("remove");
     });
+    console.log("while uplode");
   }
 }
+
 // }
 function reduceFileChar(char) {
   if (char.length >= 10) {
@@ -188,15 +259,27 @@ rangeInputCredit.oninput = function () {
 //*** status section ***//
 
 //  progress number count
-let counter = 0;
-setInterval(countProgress, 50);
-function countProgress() {
-  if (counter !== 60) {
-    counter++;
-    progressBar.textContent = `${counter} %`;
-    cardProgressBar.textContent = `${counter} %`;
-  } else {
-    clearInterval();
+// let counter = 0;
+// setInterval(countProgress, 50);
+// function countProgress() {
+//   if (counter !== 60) {
+//     counter++;
+//     progressBar.textContent = `${counter} %`;
+//     cardProgressBar.textContent = `${counter} %`;
+//   } else {
+//     clearInterval();
+//   }
+// }
+function progressload(whichSection) {
+  let counter = 0;
+  setInterval(countProgress, 50);
+  function countProgress() {
+    if (counter !== 60) {
+      counter++;
+      whichSection.textContent = `${counter} %`; //whichSection = progressBar //whichSection = cardProgressBar
+    } else {
+      clearInterval();
+    }
   }
 }
 

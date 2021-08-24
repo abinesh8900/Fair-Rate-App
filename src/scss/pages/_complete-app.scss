@@ -1,11 +1,14 @@
 .complete-app {
-  max-width: 945px;
+  max-width: 975px;
   padding-inline: 20px;
   height: 460px;
 
   &__heading {
     margin-bottom: 43px;
   }
+}
+.complete-app.hidden {
+  display: none;
 }
 .complete-app__card-holder {
   @include flex-container($justify-content: space-between);

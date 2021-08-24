@@ -6,6 +6,9 @@
     margin-bottom: 66px;
   }
 }
+.pricing.hidden {
+  display: none;
+}
 .pricing-container {
   @include flex-container($justify-content: space-between);
   margin-bottom: 15px;
