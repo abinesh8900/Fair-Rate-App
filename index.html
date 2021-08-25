@@ -89,7 +89,7 @@
         <!--  -->
         <!--  -->
         <!-- section-2 -->
-        <div class="user-info-field mx-auto " id="user-info-field">
+        <div class="user-info-field mx-auto " id="user-info-field" style="display: none;">
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
             <h2 class="user-info__heading input-area-heading">Fill the form <span>on the right</span></h2>
@@ -100,6 +100,9 @@
           <label for="date-of-birth" class="inline-block">Date of birth</label>
             <div class="input-field__dob input-field">
               <input type="date" name="date-of-birth" id="date-of-birth">
+              <span class="input-success">L</span>
+              <span class="input-error">!</span>
+              <p class="input-error-msg">error message</p>
             </div>
 
             <!-- <div class="date-picker input-field"  id="date-picker">
@@ -201,7 +204,7 @@
 
 
             <div class="picture-checkbox__holder">
-              <div class="picture-checkbox__left">
+              <div class="picture-checkbox__left " id="picture-checkbox-criminal-alarm">
                 <span class="inline-block">
                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="48" viewBox="0 0 46 48">
                   <g fill="#23C0F5" fill-rule="nonzero">
@@ -216,7 +219,7 @@
                 <label for="criminal-alarm" class="inline-block input-field__pic-checkbox--text">Burglar Alarm</label>
               </div>
               </div>
-              <div class="picture-checkbox__right">
+              <div class="picture-checkbox__right"  id="picture-checkbox-fire-alarm">
                 <span class="inline-block">
                 <svg  width="36" height="48" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="fire" class="svg-inline--fa fa-fire fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                   <path fill="currentColor" d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path>
@@ -228,6 +231,7 @@
                   <label for="fire-alarm" class="inline-block input-field__pic-checkbox--text">Burglar Alarm</label>
                 </div>
               </div>
+              <p class="input-error-msg">select any one option</p>
             </div>
 
             <div class="user-info__btn-holder">
@@ -239,7 +243,7 @@
         
 
         <!-- section 3 -->
-        <div class="upload-page mx-auto hidden" id ="upload-section">
+        <div class="upload-page mx-auto " id ="upload-section">
           <h2 class="upload-page__heading input-area-heading text-center">Few more step ahead upload your ID Document 👆</h2>
           <div class="select-proof__holder">
             <span class="inline-block photo-proof__btn text-center selected">Photo Indentification</span>

@@ -17,7 +17,9 @@
   @include input-field(380px, 328px);
   margin-bottom: 30px;
 }
-
+.input-field__dob.success {
+  border: 1px solid var(--clr-blue-secondary);
+}
 .input-field__address,
 .input-field__email {
   @include input-field(380px, 328px);
@@ -162,8 +164,12 @@
 //picture checkbox
 .picture-checkbox__holder {
   margin-bottom: 60px;
+  @include flex-container($justify-content: space-between, $flex-wrap: wrap);
+  & .input-error-msg {
+    width: 100%;
+    margin-left: 20px;
+  }
 }
-.picture-checkbox__holder,
 .user-info__btn-holder {
   @include flex-container($justify-content: space-between);
 }
@@ -180,14 +186,28 @@
     transform: translateX(-50%);
   }
 }
+.picture-checkbox__left.active,
+.picture-checkbox__right.active {
+  border: 1px solid var(--clr-blue-secondary);
+}
 .picture-checkbox__left {
   & g[fill] {
     fill: var(--clr-d-grey-primary);
   }
 }
+.picture-checkbox__left.active {
+  & g[fill] {
+    fill: var(--clr-blue-secondary);
+  }
+}
 .picture-checkbox__right {
   & path[fill] {
     fill: var(--clr-d-grey-primary);
+  }
+}
+.picture-checkbox__right.active {
+  & path[fill] {
+    fill: var(--clr-blue-secondary);
   }
 }
 

@@ -57,16 +57,13 @@ function remove(elementToRemove) {
 
 // next btn
 pageOneNext.addEventListener("click", () => {
-  console.log("check");
+  // console.log("check");
   checkUserName();
 });
 
 //***user info****//
 // next btn
 userInfoNext.addEventListener("click", () => {
-  // add(userInfoField);
-  // remove(uploadeSection);
-  // showFooter();
   checkUserInfo();
 });
 //back btn
@@ -79,9 +76,7 @@ userInfoBack.addEventListener("click", () => {
 // *** upload section ***//
 // next btn
 uploadeSectionNext.addEventListener("click", function () {
-  add(uploadeSection);
-  remove(resultSection);
-  loadeLate();
+  checkuploadFile();
 });
 //  back btn
 uploadeSectionBack.addEventListener("click", function () {
@@ -163,6 +158,7 @@ dropArea.addEventListener("drop", (event) => {
   file = event.dataTransfer.files[0];
   showFile();
 });
+let uplodeFileCheckNavigation = false;
 function showFile() {
   // console.log(file);
   // fileArray.push(file);
@@ -174,8 +170,10 @@ function showFile() {
   const fileType = file.name.substring(file.name.lastIndexOf(".") + 1);
   if (!(fileType == "jpg" || fileType == "png" || fileType == "pdf")) {
     alert("invalid file");
+    uplodeFileCheckNavigation = false;
   } else if (!(file.size < 5242880)) {
     alert("file size is large");
+    uplodeFileCheckNavigation = false;
   } else {
     console.log(file);
     const uploadedItems = document.createElement("div");
@@ -233,8 +231,19 @@ function showFile() {
       // console.log("remove");
     });
     // console.log("while uplode");
+    uplodeFileCheckNavigation = true;
+    return uplodeFileCheckNavigation;
   }
   // }
+}
+function checkuploadFile() {
+  if (uplodeFileCheckNavigation == true) {
+    add(uploadeSection);
+    remove(resultSection);
+    loadeLate();
+  } else {
+    alert("uplode required files");
+  }
 }
 function reduceFileChar(char) {
   if (char.length >= 10) {
@@ -316,6 +325,18 @@ function checkUserName() {
     console.log("valid");
   } else {
     console.log("invalid");
+  }
+}
+
+const dateOfBirth = document.getElementById("date-of-birth");
+dateOfBirth.addEventListener("change", checkDateOfBith);
+function checkDateOfBith() {
+  if (dateOfBirth.value === "") {
+    setErrorFor(dateOfBirth, "select your date of birth");
+    return false;
+  } else {
+    setSuccessFor(dateOfBirth);
+    return true;
   }
 }
 
@@ -434,6 +455,7 @@ function selectedCheckbox() {
   }
 }
 
+// *** select input ***//
 const selectDurations = optionContainer.querySelectorAll("input");
 let selectDurationValid = false;
 for (const selectDuration of selectDurations) {
@@ -453,6 +475,48 @@ for (const selectDuration of selectDurations) {
     return selectDurationValid;
   }
 }
+
+// *** picture checkbox *** //
+
+const criminalAlarm = document.getElementById(
+  "picture-checkbox-criminal-alarm"
+);
+const alarmCheckboxHolder = criminalAlarm.parentElement;
+const firelAlarm = document.getElementById("picture-checkbox-fire-alarm");
+const criminalAlarmCheckbox = document.getElementById("criminal-alarm");
+const fireAlarmCheckbox = document.getElementById("fire-alarm");
+
+let criminalAlarmValue = false,
+  firelAlarmValue = false;
+criminalAlarmCheckbox.addEventListener("change", function () {
+  if (criminalAlarmCheckbox.checked) {
+    criminalAlarm.classList.add("active");
+    firelAlarm.classList.remove("active");
+    alarmCheckboxHolder.classList.remove("error");
+    criminalAlarmValue = true;
+    firelAlarmValue = false;
+    alarmCheckbox();
+  }
+});
+fireAlarmCheckbox.addEventListener("change", function () {
+  if (fireAlarmCheckbox.checked) {
+    firelAlarm.classList.add("active");
+    criminalAlarm.classList.remove("active");
+    alarmCheckboxHolder.classList.remove("error");
+    firelAlarmValue = true;
+    criminalAlarmValue = false;
+    alarmCheckbox();
+  }
+});
+function alarmCheckbox() {
+  if (criminalAlarmValue || firelAlarmValue) {
+    return true;
+  } else {
+    alarmCheckboxHolder.classList.add("error");
+    return false;
+  }
+}
+
 function checkUserInfo() {
   // console.log(
   //   selectedCheckbox(),
@@ -462,12 +526,17 @@ function checkUserInfo() {
   // );
 
   if (
+    checkDateOfBith() == true &&
     checkAddress() == true &&
     checkEmail() == true &&
     selectedCheckbox() == true &&
-    checkSelectDuration() == true
+    checkSelectDuration() == true &&
+    alarmCheckbox() == true
   ) {
     console.log("navigate");
+    add(userInfoField);
+    remove(uploadeSection);
+    showFooter();
   } else {
     console.log("no navigate");
   }
