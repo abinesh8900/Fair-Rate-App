@@ -65,19 +65,19 @@
         <!--add reduce class in input-holder at progress page is lode-->
 
         <!-- section-1 -->
-        <div class="username-field mx-auto text-center" id="username-field">
+        <div class="username-field mx-auto text-center" id="username-field" style="display: none;">
           <h2 class="input-area-heading username-field__heading">I'll get you an awesome price in seconds. Ready to go?</h2>
           <div class="username__intup-area">
 
             <div class="input-field__first-name input-field">
-              <input type="text" placeholder="First Name" name="first-name" id="first-name" autocomplete="off" onkeyup="checkFirstName()">
+              <input type="text" placeholder="First Name" name="first-name" id="first-name" autocomplete="off">
               <span class="input-success">L</span>
               <span class="input-error">!</span>
               <p class="input-error-msg">error message</p>
             </div>
 
             <div class="input-field__last-name input-field">
-              <input type="text" placeholder="Last Name" name="last-name" id="last-name" autocomplete="off" onkeyup="checkLastName()">
+              <input type="text" placeholder="Last Name" name="last-name" id="last-name" autocomplete="off">
               <span class="input-success">L</span>
               <span class="input-error">!</span>
               <p class="input-error-msg">error message</p>
@@ -89,7 +89,7 @@
         <!--  -->
         <!--  -->
         <!-- section-2 -->
-        <div class="user-info-field mx-auto hidden" id="user-info-field">
+        <div class="user-info-field mx-auto " id="user-info-field">
           <div class="user-info-field__left">
             <div class="user-info-field__left-content">
             <h2 class="user-info__heading input-area-heading">Fill the form <span>on the right</span></h2>
@@ -140,53 +140,62 @@
               <p class="input-error-msg">error message</p>
             </div>
 
-            <div class="input-field__checkbox ml-auto">
-              <input type="checkbox" name="condo" id="condo" hidden>
-              <label for="condo" class="checkmark primary-checkbox"></label>
-              <label for="condo" class="inline-block input-field__checkbox--text">Condo</label>
-            </div>
-            <div class="input-field__checkbox ml-auto">
-              <input type="checkbox" name="co-op" id="co-op" hidden>
-              <label for="co-op" class="checkmark primary-checkbox"></label>
-              <label for="co-op" class="inline-block input-field__checkbox--text">Co-op</label>
-            </div>
-            <div class="input-field__checkbox ml-auto">
-              <input type="checkbox" name="house" id="house" hidden>
-              <label for="house" class="checkmark primary-checkbox"></label>
-              <label for="house" class="inline-block input-field__checkbox--text">House</label>
-            </div>
-
-            <div class="input-field__select ml-auto input-field" id="input-field-select">
-             <p>--Select</p>
-              <span class="inline-block select-arrow"></span>
+            <div class="input-field__checkbox-holder ml-auto " id="property-checkbox-holder">
+              <div class="input-field__checkbox" id="condo-checkbox">
+                <input type="checkbox" name="residences" id="condo" value="condo" hidden>
+                <label for="condo" class="checkmark primary-checkbox"></label>
+                <label for="condo" class="inline-block input-field__checkbox--text">Condo</label>
+              </div>
+              <div class="input-field__checkbox" id="co-op-checkbox">
+                <input type="checkbox" name="residences" id="co-op" value="co-op" hidden>
+                <label for="co-op" class="checkmark primary-checkbox"></label>
+                <label for="co-op" class="inline-block input-field__checkbox--text">Co-op</label>
+              </div>
+              <div class="input-field__checkbox" id="house-checkbox">
+                <input type="checkbox" name="residences" id="house" value="house" hidden>
+                <label for="house" class="checkmark primary-checkbox"></label>
+                <label for="house" class="inline-block input-field__checkbox--text">House</label>
+              </div>
+              <p class="input-error-msg">select any one checkbox</p>
             </div>
 
-            <div class="option-container ml-auto" id="show-select-option">
-              <div class="option-item">
-                <input class="option-item__radio" type="radio" name="select" id="this-month">
-                <label class="block" for="this-month">This month</label>
-              </div>
 
-              <div class="option-item">
-                <input class="option-item__radio" type="radio" name="select" id="next-month">
-                <label class="block" for="next-month">Next Month</label>
-              </div>
+            <div class=" input-field__select-holder">
+               <div class="option-container ml-auto" id="show-select-option">
+                 <div class="option-item">
+                   <input class="option-item__radio" type="radio" name="select-duration" id="this-month" hidden value="This month">
+                   <label class="block" for="this-month">This month</label>
+                 </div>
+   
+                 <div class="option-item">
+                   <input class="option-item__radio" type="radio" name="select-duration" id="next-month" hidden value="Next Month">
+                   <label class="block" for="next-month">Next Month</label>
+                 </div>
+   
+                 <div class="option-item">
+                   <input class="option-item__radio" type="radio" name="select-duration" id="december-2021" hidden value="December 2021"> 
+                   <label class="block" for="december-2021">December 2021</label>
+                 </div>
+   
+                 <div class="option-item">
+                   <input class="option-item__radio" type="radio" name="select-duration" id="january-2022" hidden value="january 2022">
+                   <label class="block" for="january-2022">january 2022</label>
+                 </div>
+   
+                 <div class="option-item">
+                   <input class="option-item__radio" type="radio" name="select-duration" id="i-dont-know" hidden value="I don't know">
+                   <label class="block" for="i-dont-know">I don't know</label>
+                 </div>
+               </div>
 
-              <div class="option-item">
-                <input class="option-item__radio" type="radio" name="select" id="december-2021">
-                <label class="block" for="december-2021">December 2021</label>
-              </div>
-
-              <div class="option-item">
-                <input class="option-item__radio" type="radio" name="select" id="january-2022">
-                <label class="block" for="january-2022">january 2022</label>
-              </div>
-
-              <div class="option-item">
-                <input class="option-item__radio" type="radio" name="select" id="i-dont-know">
-                <label class="block" for="i-dont-know">I don't know</label>
-              </div>
+               
+               <div class="input-field__select ml-auto input-field" id="input-field-select">
+                <p class="input-field__selected-item">--Select</p>
+                 <span class="inline-block select-arrow"></span>
+                 <p class="input-error-msg">select any one option</p>
+               </div>
             </div>
+
            
 
 
@@ -202,7 +211,7 @@
               </svg>
               </span>
               <div class="input-field__pic-checkbox">
-                <input type="checkbox" name="criminal-alarm" id="criminal-alarm" hidden>
+                <input type="radio" name="alarm-type" id="criminal-alarm" hidden>
                 <label for="criminal-alarm" class="checkmark primary-checkbox"></label>
                 <label for="criminal-alarm" class="inline-block input-field__pic-checkbox--text">Burglar Alarm</label>
               </div>
@@ -214,7 +223,7 @@
                 </svg>
                 </span>
                 <div class="input-field__pic-checkbox">
-                  <input type="checkbox" name="fire-alarm" id="fire-alarm" hidden>
+                  <input type="radio" name="alarm-type" id="fire-alarm" hidden>
                   <label for="fire-alarm" class="checkmark primary-checkbox"></label>
                   <label for="fire-alarm" class="inline-block input-field__pic-checkbox--text">Burglar Alarm</label>
                 </div>
@@ -741,5 +750,5 @@
       </div>
     </footer>
   </body>
-  <script type="module" src="dist/js/script.js"></script>
+  <script src="dist/js/script.js"></script>
 </html>

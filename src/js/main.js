@@ -57,17 +57,17 @@ function remove(elementToRemove) {
 
 // next btn
 pageOneNext.addEventListener("click", () => {
-  add(userNameField);
-  remove(userInfoField);
-  hideFooter();
+  console.log("check");
+  checkUserName();
 });
 
 //***user info****//
 // next btn
 userInfoNext.addEventListener("click", () => {
-  add(userInfoField);
-  remove(uploadeSection);
-  showFooter();
+  // add(userInfoField);
+  // remove(uploadeSection);
+  // showFooter();
+  checkUserInfo();
 });
 //back btn
 userInfoBack.addEventListener("click", () => {
@@ -129,11 +129,18 @@ inputSelect.addEventListener("click", () => {
 
 optionItems.forEach((optionItem) => {
   optionItem.addEventListener("click", () => {
-    inputSelect.querySelector("p").textContent =
+    inputSelect.querySelector(".input-field__selected-item").textContent =
       optionItem.querySelector("label").textContent;
     optionContainer.classList.remove("active");
   });
 });
+
+// if (inputSelect.querySelector("p").textContent != "--Select") {
+//   // inputSelect.classList.add("blue-border");
+//   console.log("equal");
+// } else {
+//   console.log("not equal");
+// }
 
 //*** uploade files section ***//
 
@@ -274,60 +281,197 @@ function progressload(whichSection) {
 }
 
 // validation
-const checkFirstName = function () {
-  const firstName = document.getElementById("first-name");
-  const firstNameValue = firstName.value.trim();
+const firstName = document.getElementById("first-name");
+firstName.addEventListener("keyup", checkFirstName);
 
+function checkFirstName() {
+  const firstNameValue = firstName.value.trim();
   if (firstNameValue === "") {
     setErrorFor(firstName, "First Name can't be blank");
-    console.log("blank");
+    return false;
   } else {
     setSuccessFor(firstName);
-    console.log("some thing in");
+    return true;
   }
-};
+}
 
-const checkLastName = function () {
-  const lastName = document.getElementById("last-name");
+const lastName = document.getElementById("last-name");
+lastName.addEventListener("keyup", checkLastName);
+function checkLastName() {
   const lastNameValue = lastName.value.trim();
-
   if (lastNameValue === "") {
     setErrorFor(lastName, "Last name can't be blank");
-    return 0;
+    return false;
   } else {
     setSuccessFor(lastName);
-    return 1;
+    return true;
   }
-};
+}
 
-const checkAddress = function () {
-  const address = document.getElementById("address");
+function checkUserName() {
+  if (checkFirstName() == true && checkLastName() == true) {
+    add(userNameField);
+    remove(userInfoField);
+    hideFooter();
+    console.log("valid");
+  } else {
+    console.log("invalid");
+  }
+}
+
+const address = document.getElementById("address");
+address.addEventListener("keyup", checkAddress);
+function checkAddress() {
   const addressValue = address.value.trim();
   const addressFormate = /^[a-zA-Z0-9\s,'-]*$/;
 
   if (addressValue === "") {
     setErrorFor(address, "Address is can't be blank");
+    return false;
   } else if (addressValue.match(addressFormate)) {
     setSuccessFor(address);
+    return true;
   } else {
     setErrorFor(address, "Address is invalid");
+    return false;
   }
-};
+}
+const email = document.getElementById("email");
+email.addEventListener("keyup", checkEmail);
 
-const checkEmail = function () {
-  const email = document.getElementById("email");
+function checkEmail() {
   const emailValue = email.value.trim();
   const emailFormat =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   if (emailValue === "") {
     setErrorFor(email, "Email can't be blank");
+    return false;
   } else if (emailValue.match(emailFormat)) {
     setSuccessFor(email);
+    return true;
   } else {
     setErrorFor(email, "Invalid email");
+    return false;
   }
-};
+}
+// *** property check box **//
+
+const condoCheckbox = document.getElementById("condo-checkbox");
+const coOpCheckbox = document.getElementById("co-op-checkbox");
+const houseCheckbox = document.getElementById("house-checkbox");
+const condo = document.getElementById("condo");
+const coOp = document.getElementById("co-op");
+const house = document.getElementById("house");
+// console.log(condoCheckbox, condoCheckbox, houseCheckbox, condo, coOp, house);
+function removeBlueBorder(removeForThis) {
+  removeForThis.classList.remove("blue-border");
+  selectedCheckbox();
+}
+function addBlueBorder(addForThis) {
+  addForThis.classList.add("blue-border");
+  selectedCheckbox();
+}
+
+// let propertyCheckbox = false;
+let condoCheckboxValue = false,
+  coOpCheckboxValue = false,
+  houseCheckboxValue = false;
+condo.addEventListener("change", function () {
+  if (condo.checked == true) {
+    condoCheckboxValue = true;
+    addBlueBorder(condoCheckbox);
+    return condoCheckboxValue;
+  }
+});
+
+condo.addEventListener("change", function () {
+  if (condo.checked == false) {
+    condoCheckboxValue = false;
+    removeBlueBorder(condoCheckbox);
+    return condoCheckboxValue;
+  }
+});
+coOp.addEventListener("change", function () {
+  if (coOp.checked == true) {
+    coOpCheckboxValue = true;
+    addBlueBorder(coOpCheckbox);
+    return coOpCheckboxValue;
+  }
+});
+coOp.addEventListener("change", function () {
+  if (coOp.checked == false) {
+    coOpCheckboxValue = false;
+    removeBlueBorder(coOpCheckbox);
+    return coOpCheckboxValue;
+  }
+});
+house.addEventListener("change", function () {
+  if (house.checked == true) {
+    houseCheckboxValue = true;
+    addBlueBorder(houseCheckbox);
+    return houseCheckboxValue;
+  }
+});
+house.addEventListener("change", function () {
+  if (house.checked == false) {
+    houseCheckboxValue = false;
+    removeBlueBorder(houseCheckbox);
+    return houseCheckboxValue;
+  }
+});
+function selectedCheckbox() {
+  // console.log(condoCheckboxValue, coOpCheckboxValue, houseCheckboxValue);
+  const propertyCheckboxHolder = document.getElementById(
+    "property-checkbox-holder"
+  );
+  if (condoCheckboxValue || coOpCheckboxValue || houseCheckboxValue) {
+    propertyCheckboxHolder.classList.remove("error");
+    return true;
+  } else {
+    propertyCheckboxHolder.classList.add("error");
+    return false;
+  }
+}
+
+const selectDurations = optionContainer.querySelectorAll("input");
+let selectDurationValid = false;
+for (const selectDuration of selectDurations) {
+  selectDuration.addEventListener("change", checkSelectDuration);
+  function checkSelectDuration() {
+    if (selectDuration.checked) {
+      inputSelect.classList.add("blue-border");
+      inputSelect.classList.remove("error");
+      selectDurationValid = true;
+    } else if (
+      inputSelect.querySelector(".input-field__selected-item").innerText ==
+      "--Select"
+    ) {
+      inputSelect.classList.add("error");
+      selectDurationValid = false;
+    }
+    return selectDurationValid;
+  }
+}
+function checkUserInfo() {
+  // console.log(
+  //   selectedCheckbox(),
+  //   checkAddress(),
+  //   checkEmail(),
+  //   checkSelectDuration()
+  // );
+
+  if (
+    checkAddress() == true &&
+    checkEmail() == true &&
+    selectedCheckbox() == true &&
+    checkSelectDuration() == true
+  ) {
+    console.log("navigate");
+  } else {
+    console.log("no navigate");
+  }
+}
 
 function setErrorFor(input, message) {
   const inputHolder = input.parentElement;
