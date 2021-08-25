@@ -281,11 +281,9 @@ const checkFirstName = function () {
   if (firstNameValue === "") {
     setErrorFor(firstName, "First Name can't be blank");
     console.log("blank");
-    // return 0;
   } else {
     setSuccessFor(firstName);
     console.log("some thing in");
-    // return 1;
   }
 };
 
