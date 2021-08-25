@@ -139,7 +139,7 @@ optionItems.forEach((optionItem) => {
 
 //  uploade file
 let file;
-let fileArray = [];
+// let fileArray = [];
 browesFileBtn.addEventListener("click", () => {
   browesFileInput.click();
 });
@@ -158,78 +158,76 @@ dropArea.addEventListener("drop", (event) => {
 });
 function showFile() {
   // console.log(file);
-  fileArray.push(file);
-  file = "";
-  console.log(fileArray);
-  for (const listOfFile of fileArray) {
-    // console.log(listOfFile.name);
+  // fileArray.push(file);
+  // file = "";
+  // console.log(fileArray);
+  // for (const listOfFile of fileArray) {
+  // console.log(listOfFile.name);
 
-    const fileType = listOfFile.name.substring(
-      listOfFile.name.lastIndexOf(".") + 1
+  const fileType = file.name.substring(file.name.lastIndexOf(".") + 1);
+  if (!(fileType == "jpg" || fileType == "png" || fileType == "pdf")) {
+    alert("invalid file");
+  } else if (!(file.size < 5242880)) {
+    alert("file size is large");
+  } else {
+    console.log(file);
+    const uploadedItems = document.createElement("div");
+    uploadedItems.classList.add("uploaded-items");
+
+    const uploadedFile = document.createElement("div");
+    uploadedFile.classList.add("uploaded-file");
+
+    const uploadedFileFormat = document.createElement("div");
+    uploadedFileFormat.classList.add("uploaded-file__format-logo");
+
+    const fileTypeLogo = document.createElement("img");
+    fileTypeLogo.setAttribute("src", `dist/images/${fileType}-color.png`);
+
+    const uploadedFileName = document.createElement("span");
+    // uploadedFileName.classList.add("uploaded-file__name");
+    uploadedFileName.innerText = reduceFileChar(file.name);
+
+    const uploadedFileType = document.createElement("p");
+    uploadedFileType.classList.add("uploaded-file__format");
+    uploadedFileType.innerText = fileType;
+
+    const uploadedFileSize = document.createElement("p");
+    uploadedFileSize.classList.add("uploaded-file__size");
+    uploadedFileSize.innerText = byteToSize(file.size);
+
+    const uploadedFileStatus = document.createElement("p");
+    uploadedFileStatus.classList.add("uploaded-file__status");
+    uploadedFileStatus.innerText = "UPLOADED";
+
+    const uploadedFileDelete = document.createElement("span");
+    uploadedFileDelete.setAttribute("id", "delete-this-file");
+    uploadedFileDelete.classList.add("uploaded-file__delete", "inline-block");
+
+    const uploadedFileDeleteIcon = document.createElement("img");
+    uploadedFileDeleteIcon.setAttribute(
+      "src",
+      "dist/images/delete-outline.svg"
     );
-    if (!(fileType == "jpg" || fileType == "png" || fileType == "pdf")) {
-      alert("invalid file");
-    } else if (!(listOfFile.size < 5242880)) {
-      alert("file size is large");
-    } else {
-      console.log(listOfFile);
-      const uploadedItems = document.createElement("div");
-      uploadedItems.classList.add("uploaded-items");
+    uploadeItemsArea.append(uploadedItems);
+    uploadedItems.append(uploadedFile);
+    uploadedFile.append(
+      uploadedFileFormat,
+      uploadedFileType,
+      uploadedFileSize,
+      uploadedFileStatus,
+      uploadedFileDelete
+    );
+    uploadedFileFormat.append(fileTypeLogo, uploadedFileName);
+    uploadedFileDelete.append(uploadedFileDeleteIcon);
 
-      const uploadedFile = document.createElement("div");
-      uploadedFile.classList.add("uploaded-file");
-
-      const uploadedFileFormat = document.createElement("div");
-      uploadedFileFormat.classList.add("uploaded-file__format-logo");
-
-      const fileTypeLogo = document.createElement("img");
-      fileTypeLogo.setAttribute("src", `dist/images/${fileType}-color.png`);
-
-      const uploadedFileName = document.createElement("span");
-      // uploadedFileName.classList.add("uploaded-file__name");
-      uploadedFileName.innerText = reduceFileChar(listOfFile.name);
-
-      const uploadedFileType = document.createElement("p");
-      uploadedFileType.classList.add("uploaded-file__format");
-      uploadedFileType.innerText = fileType;
-
-      const uploadedFileSize = document.createElement("p");
-      uploadedFileSize.classList.add("uploaded-file__size");
-      uploadedFileSize.innerText = byteToSize(listOfFile.size);
-
-      const uploadedFileStatus = document.createElement("p");
-      uploadedFileStatus.classList.add("uploaded-file__status");
-      uploadedFileStatus.innerText = "UPLOADED";
-
-      const uploadedFileDelete = document.createElement("span");
-      uploadedFileDelete.setAttribute("id", "delete-this-file");
-      uploadedFileDelete.classList.add("uploaded-file__delete", "inline-block");
-
-      const uploadedFileDeleteIcon = document.createElement("img");
-      uploadedFileDeleteIcon.setAttribute(
-        "src",
-        "dist/images/delete-outline.svg"
-      );
-      uploadeItemsArea.append(uploadedItems);
-      uploadedItems.append(uploadedFile);
-      uploadedFile.append(
-        uploadedFileFormat,
-        uploadedFileType,
-        uploadedFileSize,
-        uploadedFileStatus,
-        uploadedFileDelete
-      );
-      uploadedFileFormat.append(fileTypeLogo, uploadedFileName);
-      uploadedFileDelete.append(uploadedFileDeleteIcon);
-
-      const deleteUploadedFile = document.getElementById("delete-this-file");
-      deleteUploadedFile.addEventListener("click", function () {
-        uploadedItems.remove();
-        // console.log("remove");
-      });
-      // console.log("while uplode");
-    }
+    const deleteUploadedFile = document.getElementById("delete-this-file");
+    deleteUploadedFile.addEventListener("click", function () {
+      uploadedItems.remove();
+      // console.log("remove");
+    });
+    // console.log("while uplode");
   }
+  // }
 }
 function reduceFileChar(char) {
   if (char.length >= 10) {
@@ -276,17 +274,18 @@ function progressload(whichSection) {
 }
 
 // validation
-
 const checkFirstName = function () {
   const firstName = document.getElementById("first-name");
   const firstNameValue = firstName.value.trim();
 
   if (firstNameValue === "") {
     setErrorFor(firstName, "First Name can't be blank");
-    return 0;
+    console.log("blank");
+    // return 0;
   } else {
     setSuccessFor(firstName);
-    return 1;
+    console.log("some thing in");
+    // return 1;
   }
 };
 
